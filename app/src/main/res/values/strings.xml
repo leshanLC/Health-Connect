@@ -1,3 +1,20 @@
 <resources>
+    //For the appointment page
     <string name="app_name">Health Connect</string>
+    <string name="txtAppointmentHeading">Appointments</string>
+    <string name="txtSearchAppointment">Search an appointment</string>
+    <string name="txtAppointmentTitle">Appointment Title</string>
+    <string name="btnViewAppointment">View</string>
+    <string name="btnUpdateAppointment">Update</string>
+    <string name="btnDeleteAppointment">Delete</string>
+    <string name="btnAddAppointment">+</string>
+    <string name="txtAppointmentID">Appointment ID</string>
+    <string name="txtPatientName">Patient Name</string>
+    <string name="txtPatientDOB">DOB</string>">
+    <string name="txtDoctorName">Doctor Name</string>
+    <string name="txtDate">Date</string>
+    <string name="txtTime">Time</string>
+    <string name="txtAppointmentReason">Reason</string>
+
+
 </resources>
