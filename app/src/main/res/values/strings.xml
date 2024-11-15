@@ -8,13 +8,18 @@
     <string name="btnUpdateAppointment">Update</string>
     <string name="btnDeleteAppointment">Delete</string>
     <string name="btnAddAppointment">+</string>
+    <string name="btnBack">Back</string>
     <string name="txtAppointmentID">Appointment ID</string>
     <string name="txtPatientName">Patient Name</string>
+    <string name="txtPatientHealthNumber">Personal Health Number</string>
+    <string name="txtPatientPhoneNumber">Phone NUmber</string>
+    <string name="txtPatientGender">Gender</string>
     <string name="txtPatientDOB">DOB</string>">
     <string name="txtDoctorName">Doctor Name</string>
     <string name="txtDate">Date</string>
     <string name="txtTime">Time</string>
     <string name="txtAppointmentReason">Reason</string>
+    <string name="btnAppointments">Appointments</string>
 
 
 </resources>
