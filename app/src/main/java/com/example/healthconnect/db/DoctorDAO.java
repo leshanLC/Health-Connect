@@ -18,6 +18,7 @@ public class DoctorDAO {
 
     public long addDoctor(Doctor doctor) {
         ContentValues values = new ContentValues();
+        values.put("practitioner_id", doctor.getPractitionerId());
         values.put("name", doctor.getName());
         values.put("phone", doctor.getPhone());
         values.put("email", doctor.getEmail());

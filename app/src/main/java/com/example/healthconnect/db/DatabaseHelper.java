@@ -16,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL("CREATE TABLE DOCTOR (" +
-                "practitioner_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "practitioner_id INTEGER PRIMARY KEY, " +
                 "name TEXT NOT NULL, " +
                 "phone TEXT NOT NULL, " +
                 "email TEXT NOT NULL, " +
