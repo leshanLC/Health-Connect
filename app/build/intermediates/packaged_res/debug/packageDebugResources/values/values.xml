@@ -5,13 +5,16 @@
     <string name="app_name">Health Connect</string>
     <string name="btnAddPatient">Add Patient</string>
     <string name="btnCancel">Cancel</string>
+    <string name="btnGeneratePDF">Generate PDF</string>
     <string name="btnViewPatientHistory">View Patient History</string>
     <string name="searchHint"> Search Patient </string>
+    <string name="tvAddPatientHistory">Add Patient History</string>
     <string name="tvAddPatients"> Add Patients </string>
     <string name="tvAddress" translatable="false">Address</string>
     <string name="tvBirthday">Birthday</string>
     <string name="tvName">Name</string>
     <string name="tvPHN">Personal Health Number</string>
+    <string name="tvPatientHistory">Patient History</string>
     <string name="tvPatientManagement">Patient Management</string>
     <string name="tvPhone">Phone</string>
     <string name="tvPractitionerID">Practitioner ID</string>

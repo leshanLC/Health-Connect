@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Health Connect</string>
+    <string name="btnAddPatient">Add Patient</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="btnGeneratePDF">Generate PDF</string>
+    <string name="btnViewPatientHistory">View Patient History</string>
+    <string name="searchHint"> Search Patient </string>
+    <string name="tvAddPatientHistory">Add Patient History</string>
+    <string name="tvAddPatients"> Add Patients </string>
+    <string name="tvAddress" translatable="false">Address</string>
+    <string name="tvBirthday">Birthday</string>
+    <string name="tvName">Name</string>
+    <string name="tvPHN">Personal Health Number</string>
+    <string name="tvPatientHistory">Patient History</string>
+    <string name="tvPatientManagement">Patient Management</string>
+    <string name="tvPhone">Phone</string>
+    <string name="tvPractitionerID">Practitioner ID</string>
+    <string name="tvViewPatients"> View Patient </string>
+    <style name="Base.Theme.HealthConnect" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.HealthConnect" parent="Base.Theme.HealthConnect"/>
+</resources>
