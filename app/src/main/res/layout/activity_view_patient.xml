@@ -188,7 +188,7 @@
     <EditText
         android:id="@+id/editTextText5"
         android:layout_width="285dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="Enter Address"
         android:inputType="text"
@@ -201,9 +201,10 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="41dp"
-        android:layout_height="35dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/back_icon"
+        android:contentDescription="@string/btnBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"

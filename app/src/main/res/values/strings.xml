@@ -16,4 +16,5 @@
     <string name="tvAddPatientHistory">Add Patient History</string>
     <string name="tvPatientHistory">Patient History</string>
     <string name="btnGeneratePDF">Generate PDF</string>
+    <string name="btnBack"> Back </string>
 </resources>
