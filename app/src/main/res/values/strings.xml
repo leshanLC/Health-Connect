@@ -17,4 +17,9 @@
     <string name="tvPatientHistory">Patient History</string>
     <string name="btnGeneratePDF">Generate PDF</string>
     <string name="btnBack"> Back </string>
+    <string name="DateTime"> Enter Date/Time</string>
+    <string name="weight"> Enter Weight </string>
+    <string name="height"> Enter Height </string>
+    <string name="diagnosis"> Enter Diagnosis </string>
+    <string name="treatments"> Enter Treatments </string>
 </resources>
