@@ -16,4 +16,5 @@ public class add_appointment extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_appointment);
     }
+
 }

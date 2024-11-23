@@ -15,6 +15,5 @@ public class add_medication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_medication);
-
     }
 }

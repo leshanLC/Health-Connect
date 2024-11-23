@@ -146,9 +146,6 @@
                     android:text=""
                     android:textSize="13sp"/>
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>

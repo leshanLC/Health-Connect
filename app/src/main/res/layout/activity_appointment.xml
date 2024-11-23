@@ -55,5 +55,4 @@
         tools:layout_editor_absoluteX="12dp"
         tools:layout_editor_absoluteY="111dp" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
