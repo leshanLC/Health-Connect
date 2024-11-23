@@ -1,0 +1,81 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <!-- Appointment heading -->
+            <TextView
+                android:id="@+id/txtAppointmentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:text="@string/txtAppointmentTitle"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Appointment date -->
+            <TextView
+                android:id="@+id/txtAppointmentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:layout_margin="5dp"
+                android:text="@string/txtDate"
+                android:textSize="14sp" />
+
+            <!-- Appointment time -->
+            <TextView
+                android:id="@+id/txtAppointmentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="3dp"
+                android:text="@string/txtTime"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnViewAppointment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/btnViewAppointment"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/btnUpdateAppointment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/btnUpdateAppointment"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/btnDeleteAppointment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/btnDeleteAppointment"
+                tools:ignore="ImageContrastCheck" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

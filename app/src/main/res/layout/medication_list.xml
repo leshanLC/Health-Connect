@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblAppointmentTitle"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedicationTitle"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/txtMedicationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblHealthNumber"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtPatientHealthNumber"
+                    android:textSize="13sp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/txtHealthNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblForm"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedicationForm"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txtMedicationForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblStrength"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedicationStrength"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txtMedicationStrength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblDosage"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedicationDosage"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txtMedicationDosage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblDuration"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedicationDuration"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txtMedicationDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
