@@ -56,7 +56,6 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(new Intent(TestActivity.this, PatientManagement.class));
             }
         });
-
     }
 
     private void savePatient(){
