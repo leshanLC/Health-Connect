@@ -11,7 +11,7 @@
     <string name="tvPractitionerID">Practitioner ID</string>
     <string name="btnAddPatient">Add Patient</string>
     <string name="btnCancel">Cancel</string>
-    <string name="tvViewPatients"> View Patient </string>
+    <string name="tvViewPatients"> View Patient</string>
     <string name="btnViewPatientHistory">View Patient History</string>
     <string name="tvAddPatientHistory">Add Patient History</string>
     <string name="tvPatientHistory">Patient History</string>
