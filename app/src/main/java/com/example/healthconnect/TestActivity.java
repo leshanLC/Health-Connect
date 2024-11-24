@@ -20,7 +20,7 @@ public class TestActivity extends AppCompatActivity {
     private EditText edtPhn, edtName, edtBirthday, edtAddress, edtPhone, edtPractitionerId;
     private RadioGroup radioGroupGender;
     private RadioButton radioMale, radioFemale;
-    private Button btnSavePatient, btnBack;
+    private Button btnSavePatient, btnBack, btnCancel;
     private PatientDAO patientDAO;
 
     @Override
@@ -31,6 +31,7 @@ public class TestActivity extends AppCompatActivity {
 
         btnSavePatient = findViewById(R.id.btnAddPatient);
         btnBack = findViewById(R.id.btnBack);
+        btnCancel = findViewById(R.id.btnCancel);
         edtPhn = findViewById(R.id.edtPhn);
         edtName = findViewById(R.id.edtName);
         edtBirthday = findViewById(R.id.edtBirthday);
@@ -51,6 +52,13 @@ public class TestActivity extends AppCompatActivity {
         });
 
         btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TestActivity.this, PatientManagement.class));
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TestActivity.this, PatientManagement.class));
