@@ -22,4 +22,5 @@
     <string name="height"> Enter Height </string>
     <string name="diagnosis"> Enter Diagnosis </string>
     <string name="treatments"> Enter Treatments </string>
+    <string name="btnGender"> Gender </string>
 </resources>
