@@ -23,4 +23,7 @@
     <string name="diagnosis"> Enter Diagnosis </string>
     <string name="treatments"> Enter Treatments </string>
     <string name="btnGender"> Gender </string>
+    <string name="viewPatient"> View Patient </string>
+    <string name="modifyPatient"> Modify Patient </string>
+    <string name="deletePatient"> Delete Patient </string>
 </resources>

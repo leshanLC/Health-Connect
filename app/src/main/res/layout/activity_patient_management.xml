@@ -1,62 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientManagement">
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <!-- List View from which data is to be searched -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvPatientManagement"
-        android:textSize="27sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        <Button
+            android:id="@+id/btnAddPatient"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/plus_icon"
+            android:layout_marginTop="25dp"
+            android:textColor="@android:color/white" />
 
-    <SearchView
-        android:id="@+id/svPatients"
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edtSearchPatient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="@string/searchHint"
-        android:iconifiedByDefault="false"
-        app:layout_constraintBottom_toBottomOf="@+id/slPatients"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
+        android:background="@android:drawable/editbox_background_normal"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:hint="Search by Name"
+        android:padding="8dp" />
 
-    <ListView
-        android:id="@+id/slPatients"
-        android:layout_width="416dp"
-        android:layout_height="571dp"
-        android:layout_below="@id/svPatients"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
-
-    <Button
-        android:id="@+id/btnPlus"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/plus_icon"
-        android:contentDescription="@string/tvAddPatients"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPatients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
