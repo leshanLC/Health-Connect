@@ -75,7 +75,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.971" />
 
     <TextView
         android:id="@+id/textView7"
@@ -88,7 +88,7 @@
         app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.637" />
 
     <TextView
         android:id="@+id/textView8"
@@ -98,13 +98,13 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.716" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/edtPhn"
         android:layout_width="178dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.141" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/edtName"
         android:layout_width="287dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -132,7 +132,7 @@
         app:layout_constraintVertical_bias="0.217" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/edtBirthday"
         android:layout_width="285dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -145,8 +145,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="285dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423"
+        android:enabled="false">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:enabled="false"/>
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:enabled="false"/>
+    </RadioGroup>
+
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/edtPhone"
         android:layout_width="285dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -154,13 +181,13 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.637" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/edtPractitionerID"
         android:layout_width="248dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -168,25 +195,25 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <Button
-        android:id="@+id/btnViewPatientHistory"
+        android:id="@+id/btnUpdatePatient"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:text="@string/btnViewPatientHistory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.837" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/edtAddress"
         android:layout_width="285dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -194,10 +221,10 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386" />
+        app:layout_constraintVertical_bias="0.558" />
 
     <Button
         android:id="@+id/btnBack"
@@ -211,6 +238,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.06" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnGender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
