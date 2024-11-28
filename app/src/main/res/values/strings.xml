@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Health Connect</string>
+    <string name="SignIn">Sign In</string>
+    <string name="Email">Email</string>
+    <string name="EmailHint">example@email.com</string>
+    <string name="Password">Password</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="NameHint">Your full name</string>
+    <string name="PractitionerId">Practitioner ID</string>
+    <string name="DoctorIDHint">Your practitioner ID</string>
+    <string name="Phone">Phone</string>
+    <string name="Name">Name</string>
+    <string name="PhoneHint">Your Phone Number</string>
+    <string name="UpAppointment">Upcoming Appointments</string>
+    <string name="ConsultHistory">Consultation History</string>
+    <string name="MngPatients">Manage Patients</string>
 </resources>
