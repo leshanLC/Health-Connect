@@ -26,5 +26,6 @@
     <string name="viewPatient"> View Patient </string>
     <string name="modifyPatient"> Update Patient </string>
     <string name="deletePatient"> Delete Patient </string>
+    <string name="updatePatientHistory"> Update Patient History </string>
 
 </resources>

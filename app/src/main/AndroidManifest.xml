@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Permissions required to generate the pdf -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -8,12 +11,36 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthConnect"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".UpdatePatientHistory"
+            android:exported="false" />
+        <activity
+            android:name=".UpdatePatient"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddPatientHistory"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPatientHistory"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPatient"
+            android:exported="false" />
+        <!--
+<activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        -->
+        <activity
+            android:name=".PatientManagement"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +48,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivityLocal"
+            android:exported="true" />
     </application>
 
 </manifest>
