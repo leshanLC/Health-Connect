@@ -122,7 +122,8 @@
         android:text="@string/Password"
         android:textSize="22sp"
         app:layout_constraintTop_toBottomOf="@+id/txtPractitionerID"
-        tools:layout_editor_absoluteX="59dp" />
+        tools:layout_editor_absoluteX="59dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnSignUp"
