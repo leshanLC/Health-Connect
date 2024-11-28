@@ -69,7 +69,7 @@ public class UpdatePatientHistory extends AppCompatActivity {
             public void onClick(View v) {
                 String phn = edtPhn.getText().toString();
                 Intent intent = new Intent(UpdatePatientHistory.this, ViewPatientHistory.class);
-                intent.putExtra("phn", Integer.parseInt(phn)); // Pass the PHN back
+                intent.putExtra("phn", Integer.parseInt(phn));
                 startActivity(intent);
                 finish();
             }

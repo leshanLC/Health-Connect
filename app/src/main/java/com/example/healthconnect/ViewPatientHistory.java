@@ -98,10 +98,8 @@ public class ViewPatientHistory extends AppCompatActivity {
     }
 
     private void generatePdf() {
-        // Get the PHN from the EditText
         String phn = edtPhn.getText().toString().trim();
 
-        // Fetch patient history records
         List<PatientHistory> historyList = patientHistoryDAO.getPatientHistoryByPhn(phn);
 
         if (historyList.isEmpty()) {
@@ -109,7 +107,6 @@ public class ViewPatientHistory extends AppCompatActivity {
             return;
         }
 
-        // Fetch patient details
         PatientDAO patientDAO = new PatientDAO(this);
         Patient patient = patientDAO.getPatientByPhn(Integer.parseInt(phn));
 
