@@ -80,9 +80,14 @@ public class ViewPatientHistory extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ViewPatientHistory.this, ViewPatient.class));
+                String phn = edtPhn.getText().toString();
+                Intent intent = new Intent(ViewPatientHistory.this, ViewPatient.class);
+                intent.putExtra("phn", Integer.parseInt(phn));
+                startActivity(intent);
+                finish();
             }
         });
+
 
         btnGeneratePDF.setOnClickListener(new View.OnClickListener() {
             @Override

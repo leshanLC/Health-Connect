@@ -55,7 +55,11 @@ public class AddPatientHistory extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddPatientHistory.this, ViewPatientHistory.class));
+                String phn = edtPhn.getText().toString();
+                Intent intent = new Intent(AddPatientHistory.this, ViewPatientHistory.class);
+                intent.putExtra("phn", Integer.parseInt(phn));
+                startActivity(intent);
+                finish();
             }
         });
 
