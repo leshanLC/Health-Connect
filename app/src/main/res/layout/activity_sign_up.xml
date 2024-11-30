@@ -7,46 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/SignIn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/txtPhone"
-        android:layout_width="294dp"
-        android:layout_height="47dp"
-        android:ems="10"
-        android:hint="@string/PhoneHint"
-        android:inputType="phone"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
-
     <TextView
-        android:id="@+id/tvPhone"
+        android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/Phone"
+        android:layout_marginTop="36dp"
+        android:text="@string/Gender"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDoctorID" />
 
+    <RadioGroup
+        android:id="@+id/rbtnGenger"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGender">
+
+        <RadioButton
+            android:id="@+id/rbtnMale"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="@string/Male" />
+
+        <RadioButton
+            android:id="@+id/rbtnFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="@string/Female" />
+    </RadioGroup>
+
     <EditText
         android:id="@+id/txtDoctorID"
-        android:layout_width="294dp"
+        android:layout_width="320dp"
         android:layout_height="47dp"
         android:ems="10"
         android:hint="@string/DoctorIDHint"
@@ -81,59 +81,103 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtPractitionerID"
-        android:layout_width="294dp"
+        android:id="@+id/txtPhone"
+        android:layout_width="320dp"
         android:layout_height="47dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
-        android:hint="@string/EmailHint"
-        android:inputType="textEmailAddress"
+        android:hint="@string/PhoneHint"
+        android:inputType="phone"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDoctorID" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/Phone"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbtnGenger" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/SignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/Password"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDoctorEmail"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/txtPassword"
-        android:layout_width="294dp"
+        android:layout_width="320dp"
         android:layout_height="47dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/SignIn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <EditText
+        android:id="@+id/txtDoctorEmail"
+        android:layout_width="320dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/EmailHint"
+        android:inputType="textEmailAddress"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDoctorID" />
 
     <TextView
         android:id="@+id/tvDoctorID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Email"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
-
-    <TextView
-        android:id="@+id/tvPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/Password"
-        android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@+id/txtPractitionerID"
-        tools:layout_editor_absoluteX="59dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/SignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
     <TextView
         android:id="@+id/tvName"
@@ -149,11 +193,12 @@
 
     <EditText
         android:id="@+id/txtDoctorName"
-        android:layout_width="294dp"
+        android:layout_width="320dp"
         android:layout_height="47dp"
         android:ems="10"
         android:hint="@string/NameHint"
         android:inputType="text"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />

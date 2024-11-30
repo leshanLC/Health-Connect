@@ -14,4 +14,7 @@
     <string name="UpAppointment">Upcoming Appointments</string>
     <string name="ConsultHistory">Consultation History</string>
     <string name="MngPatients">Manage Patients</string>
+    <string name="Gender">Gender</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
 </resources>
