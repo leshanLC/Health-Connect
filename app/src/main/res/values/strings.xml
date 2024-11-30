@@ -70,4 +70,9 @@
     <string name="Gender">Gender</string>
     <string name="Male">Male</string>
     <string name="Female">Female</string>
+    <string name="updatePatientHistory"> Update Patient History </string>
+    <string name="tvPatientName"> Patient Name </string>
+    <string name="btnView"> View </string>
+    <string name="btnUpdate"> Update </string>
+    <string name="btnDelete"> Delete </string>
 </resources>

@@ -1,9 +1,11 @@
 package com.example.healthconnect;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthconnect.datamodel.Patient;
 import com.example.healthconnect.db.PatientDAO;
+
+import java.util.Calendar;
 
 public class UpdatePatient extends AppCompatActivity {
 
@@ -39,6 +43,8 @@ public class UpdatePatient extends AppCompatActivity {
         radioGroupGender = findViewById(R.id.radioGroupGender);
         radioFemale = findViewById(R.id.radioFemale);
         radioMale = findViewById(R.id.radioMale);
+
+        edtPhn.setKeyListener(null);
 
         patientDAO = new PatientDAO(this);
 
@@ -76,6 +82,30 @@ public class UpdatePatient extends AppCompatActivity {
                 startActivity(new Intent(UpdatePatient.this, PatientManagement.class));
             }
         });
+
+        edtBirthday.setOnClickListener(v -> {
+            showDatePickerDialog();
+        });
+    }
+
+    private void showDatePickerDialog(){
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        // Create and show a DatePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                (DatePicker view, int selectedYear, int selectedMonth, int selectedDay) -> {
+                    // Update the EditText with the selected date
+                    String selectedDate = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
+                    edtBirthday.setText(selectedDate);
+                },
+                year, month, day
+        );
+
+        datePickerDialog.show();
     }
 
     private void updatePatient() {

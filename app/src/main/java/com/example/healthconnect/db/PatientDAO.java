@@ -36,13 +36,18 @@ public class PatientDAO {
         if (cursor.moveToFirst()) {
             do {
                 Patient patient = new Patient();
-                patient.setPhn(cursor.getInt(cursor.getColumnIndex("phn")));
-                patient.setName(cursor.getString(cursor.getColumnIndex("name")));
-                patient.setBirthday(cursor.getString(cursor.getColumnIndex("birthday")));
-                patient.setGender(cursor.getString(cursor.getColumnIndex("gender")));
-                patient.setAddress(cursor.getString(cursor.getColumnIndex("address")));
-                patient.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
-                patient.setPractitionerId(cursor.getInt(cursor.getColumnIndex("practitioner_id")));
+                try{
+                    patient.setPhn(cursor.getInt(cursor.getColumnIndexOrThrow("phn")));
+                    patient.setPhn(cursor.getInt(cursor.getColumnIndexOrThrow("phn")));
+                    patient.setName(cursor.getString(cursor.getColumnIndexOrThrow("name")));
+                    patient.setBirthday(cursor.getString(cursor.getColumnIndexOrThrow("birthday")));
+                    patient.setGender(cursor.getString(cursor.getColumnIndexOrThrow("gender")));
+                    patient.setAddress(cursor.getString(cursor.getColumnIndexOrThrow("address")));
+                    patient.setPhone(cursor.getString(cursor.getColumnIndexOrThrow("phone")));
+                    patient.setPractitionerId(cursor.getInt(cursor.getColumnIndexOrThrow("practitioner_id")));
+                } catch(Exception e){
+                    System.out.println(e);
+                }
                 patients.add(patient);
             } while (cursor.moveToNext());
         }
@@ -55,13 +60,17 @@ public class PatientDAO {
 
         if (cursor != null && cursor.moveToFirst()) {
             Patient patient = new Patient();
-            patient.setPhn(cursor.getInt(cursor.getColumnIndex("phn")));
-            patient.setName(cursor.getString(cursor.getColumnIndex("name")));
-            patient.setBirthday(cursor.getString(cursor.getColumnIndex("birthday")));
-            patient.setGender(cursor.getString(cursor.getColumnIndex("gender")));
-            patient.setAddress(cursor.getString(cursor.getColumnIndex("address")));
-            patient.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
-            patient.setPractitionerId(cursor.getInt(cursor.getColumnIndex("practitioner_id")));
+            try{
+                patient.setPhn(cursor.getInt(cursor.getColumnIndexOrThrow("phn")));
+                patient.setName(cursor.getString(cursor.getColumnIndexOrThrow("name")));
+                patient.setBirthday(cursor.getString(cursor.getColumnIndexOrThrow("birthday")));
+                patient.setGender(cursor.getString(cursor.getColumnIndexOrThrow("gender")));
+                patient.setAddress(cursor.getString(cursor.getColumnIndexOrThrow("address")));
+                patient.setPhone(cursor.getString(cursor.getColumnIndexOrThrow("phone")));
+                patient.setPractitionerId(cursor.getInt(cursor.getColumnIndexOrThrow("practitioner_id")));
+            } catch(Exception e){
+                System.out.println(e);
+            }
             cursor.close();
             return patient;
         }
@@ -87,39 +96,4 @@ public class PatientDAO {
     public int deletePatient(int phn) {
         return db.delete("PATIENT", "phn = ?", new String[]{String.valueOf(phn)});
     }
-
-    public List<Patient> getPatientsByPractitionerId(int practitionerId) {
-        List<Patient> patients = new ArrayList<>();
-
-        // Query the database
-        Cursor cursor = db.query(
-                "PATIENT",
-                null,
-                "practitioner_id = ?",
-                new String[]{String.valueOf(practitionerId)},
-                null,
-                null,
-                null
-        );
-
-        // Process the results
-        if (cursor != null && cursor.moveToFirst()) {
-            do {
-                Patient patient = new Patient();
-                patient.setPhn(cursor.getInt(cursor.getColumnIndex("phn")));
-                patient.setName(cursor.getString(cursor.getColumnIndex("name")));
-                patient.setBirthday(cursor.getString(cursor.getColumnIndex("birthday")));
-                patient.setGender(cursor.getString(cursor.getColumnIndex("gender")));
-                patient.setAddress(cursor.getString(cursor.getColumnIndex("address")));
-                patient.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
-                patient.setPractitionerId(cursor.getInt(cursor.getColumnIndex("practitioner_id")));
-                patients.add(patient);
-            } while (cursor.moveToNext());
-
-            cursor.close();
-        }
-
-        return patients;
-    }
-
 }

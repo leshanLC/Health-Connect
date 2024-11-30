@@ -1,5 +1,8 @@
 package com.example.healthconnect.datamodel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PatientHistory {
     private int historyId;
     private int patientPhn;
@@ -15,6 +18,14 @@ public class PatientHistory {
     public PatientHistory(int historyId, int patientPhn, String dateTime, double weight, double height, String diagnoses, String treatments) {
         this.historyId = historyId;
         this.patientPhn = patientPhn;
+        this.dateTime = dateTime;
+        this.weight = weight;
+        this.height = height;
+        this.diagnoses = diagnoses;
+        this.treatments = treatments;
+    }
+
+    public PatientHistory(String dateTime, double weight, double height, String diagnoses, String treatments) {
         this.dateTime = dateTime;
         this.weight = weight;
         this.height = height;
