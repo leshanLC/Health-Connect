@@ -62,15 +62,6 @@ public class PatientHistoryAdapter extends BaseAdapter {
         txtDiagnoses.setText("Diagnoses: " + history.getDiagnoses());
         txtTreatments.setText("Treatments: " + history.getTreatments());
 
-        btnHistoryEdit = convertView.findViewById(R.id.btnHistoryUpdate);
-
-        btnHistoryEdit.setOnClickListener(v -> {
-            Intent intent = new Intent(context, UpdatePatientHistory.class);
-            intent.putExtra("history_id", history.getHistoryId());
-            System.out.println("history id 1 " + history.getHistoryId());
-            context.startActivity(intent);
-        });
-
         return convertView;
     }
 }
