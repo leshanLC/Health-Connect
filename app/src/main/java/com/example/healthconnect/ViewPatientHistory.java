@@ -10,6 +10,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -103,7 +105,6 @@ public class ViewPatientHistory extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            // Reload the patient history
             loadPatientHistory(edtPhn.getText().toString().trim());
         }
     }
@@ -138,7 +139,7 @@ public class ViewPatientHistory extends AppCompatActivity {
         Paint titlePaint = new Paint();
         titlePaint.setTextSize(20);
         titlePaint.setFakeBoldText(true);
-        titlePaint.setColor(Color.RED);
+        titlePaint.setColor(Color.DKGRAY);
 
         Paint headerPaint = new Paint();
         headerPaint.setTextSize(12);
@@ -160,9 +161,10 @@ public class ViewPatientHistory extends AppCompatActivity {
 
         Paint linePaint = new Paint();
         linePaint.setStrokeWidth(1);
+        linePaint.setTextSize(12);
         linePaint.setColor(Color.LTGRAY);
 
-        // Footer paint (newly added)
+        // Footer paint
         Paint footerPaint = new Paint();
         footerPaint.setTextSize(10);
         footerPaint.setColor(Color.GRAY);
@@ -175,15 +177,18 @@ public class ViewPatientHistory extends AppCompatActivity {
         int yPosition = 30;
 
         // Draw the logo in the header
-        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo); // Assuming the logo is in drawable
-        int logoWidth = 80;
-        int logoHeight = 80;//(logoBitmap.getHeight() * logoWidth) / logoBitmap.getWidth(); // Scale the logo proportionally
-        canvas.drawBitmap(logoBitmap, 20, yPosition, null);
-        yPosition += logoHeight + 10;
+//        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo); // Assuming the logo is in drawable
+//        int logoWidth = 20;
+//        int logoHeight = 20; //(logoBitmap.getHeight() * logoWidth) / logoBitmap.getWidth(); // Scale the logo proportionally
+//        canvas.drawBitmap(logoBitmap, 10, yPosition, null);
+//        yPosition += logoHeight + 10;
 
-        // Draw the title "HealthConnect"
-        canvas.drawText("HealthConnect", 130, yPosition, titlePaint);
+        // Draw the title
+        canvas.drawText("Patient History Report", 130, yPosition, titlePaint);
         yPosition += 30;
+
+        canvas.drawText("Report Generated on: " + new SimpleDateFormat("yyyy-MM-dd").format(new Date()), 40, yPosition, contentPaint);
+        yPosition += 20;
 
         // Draw a horizontal line
         canvas.drawLine(10, yPosition, pageWidth - 10, yPosition, linePaint);
@@ -193,20 +198,42 @@ public class ViewPatientHistory extends AppCompatActivity {
         drawHeaderWithPatientDetails(canvas, headerPaint, linePaint, patient, phn, pageWidth, yPosition);
         yPosition += 50;
 
-        // Draw the records in a user-friendly format
+        // Printing the result set
         for (PatientHistory history : historyList) {
 
-            // Draw records using bullet points and bold labels
-            canvas.drawText("• Date/Time: " + history.getDateTime(), 40, yPosition, contentPaint);
-            yPosition += 20;
-            canvas.drawText("• Weight: " + history.getWeight() + " kg", 40, yPosition, contentPaint);
-            yPosition += 20;
-            canvas.drawText("• Height: " + history.getHeight() + " cm", 40, yPosition, contentPaint);
-            yPosition += 20;
-            canvas.drawText("• Diagnoses: " + history.getDiagnoses() , 40, yPosition, contentPaint);
-            yPosition += 20;
-            canvas.drawText("• Treatments: " + history.getTreatments(), 40, yPosition, contentPaint);
-            yPosition += 20;
+//            canvas.drawText("• Date/Time: " + history.getDateTime(), 40, yPosition, contentPaint);
+//            yPosition += 25;
+//            canvas.drawText("• Weight: " + history.getWeight() + " kg", 40, yPosition, contentPaint);
+//            yPosition += 25;
+//            canvas.drawText("• Height: " + history.getHeight() + " cm", 40, yPosition, contentPaint);
+//            yPosition += 25;
+//            canvas.drawText("• Diagnoses: " + history.getDiagnoses() , 40, yPosition, contentPaint);
+//            yPosition += 25;
+//            canvas.drawText("• Treatments: " + history.getTreatments(), 40, yPosition, contentPaint);
+//            yPosition += 25;
+
+            int labelX = 40;
+            int valueX = 120;
+
+            canvas.drawText("• Date/Time: ", labelX, yPosition, contentPaint);
+            canvas.drawText(history.getDateTime(), valueX, yPosition, contentPaint);
+            yPosition += 30;
+
+            canvas.drawText("• Weight: ", labelX, yPosition, contentPaint);
+            canvas.drawText(history.getWeight() + " kg", valueX, yPosition, contentPaint);
+            yPosition += 30;
+
+            canvas.drawText("• Height: ", labelX, yPosition, contentPaint);
+            canvas.drawText(history.getHeight() + " cm", valueX, yPosition, contentPaint);
+            yPosition += 30;
+
+            canvas.drawText("• Diagnoses: ", labelX, yPosition, contentPaint);
+            canvas.drawText(history.getDiagnoses(), valueX, yPosition, contentPaint);
+            yPosition += 30;
+
+            canvas.drawText("• Treatments: ", labelX, yPosition, contentPaint);
+            canvas.drawText(history.getTreatments(), valueX, yPosition, contentPaint);
+            yPosition += 20; // Add additional spacing before the separator
 
             // Add a separator line between records
             canvas.drawLine(10, yPosition, pageWidth - 10, yPosition, linePaint);
@@ -214,7 +241,7 @@ public class ViewPatientHistory extends AppCompatActivity {
 
             // Check if page is full and start a new one if necessary
             if (yPosition > pageHeight - 70) {
-                drawFooter(canvas, footerPaint, pageWidth, pageHeight, pdfDocument.getPages().size());
+                drawFooter(canvas, footerPaint, pageWidth, pageHeight, pdfDocument.getPages().size(), patient);
                 pdfDocument.finishPage(page);
 
                 // Start a new page
@@ -227,7 +254,7 @@ public class ViewPatientHistory extends AppCompatActivity {
         }
 
         // Finish the last page
-        drawFooter(canvas, footerPaint, pageWidth, pageHeight, pdfDocument.getPages().size());
+        drawFooter(canvas, footerPaint, pageWidth, pageHeight, pdfDocument.getPages().size() +1, patient);
         pdfDocument.finishPage(page);
 
         // Save the PDF file
@@ -245,10 +272,12 @@ public class ViewPatientHistory extends AppCompatActivity {
         }
     }
 
-    private void drawFooter(Canvas canvas, Paint footerPaint, int pageWidth, int pageHeight, int pageNumber) {
+    private void drawFooter(Canvas canvas, Paint footerPaint, int pageWidth, int pageHeight, int pageNumber, Patient patient) {
         // Draw footer with page number
-        String footerText = "Page " + pageNumber;
-        canvas.drawText(footerText, pageWidth - 100, pageHeight - 20, footerPaint);
+        String footerText = "Confidential | Page " + pageNumber + " | Patient Name: " + patient.getName() ;
+        float textWidth = footerPaint.measureText(footerText);
+        float xPosition = pageWidth - textWidth - 20;
+        canvas.drawText(footerText, xPosition, pageHeight - 20, footerPaint);
     }
 
     private void drawHeaderWithPatientDetails(Canvas canvas, Paint headerPaint, Paint linePaint, Patient patient, String phn, int pageWidth, int yPosition) {

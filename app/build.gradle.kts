@@ -40,4 +40,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    // Material Date Time Picker
+    implementation("com.wdullaer:materialdatetimepicker:4.2.3")
+
 }
