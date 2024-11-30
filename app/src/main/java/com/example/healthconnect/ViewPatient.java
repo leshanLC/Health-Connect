@@ -2,6 +2,7 @@ package com.example.healthconnect;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -74,7 +75,10 @@ public class ViewPatient extends AppCompatActivity {
         btnViewPatientHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ViewPatient.this, ViewPatientHistory.class));
+                //startActivity(new Intent(ViewPatient.this, ViewPatientHistory.class));
+                Intent intent = new Intent(ViewPatient.this, ViewPatientHistory.class);
+                intent.putExtra("phn", edtPhn.getText().toString());
+                startActivity(intent);
             }
         });
 

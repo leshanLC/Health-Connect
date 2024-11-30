@@ -35,13 +35,13 @@ public class PatientHistoryDAO {
         if (cursor.moveToFirst()) {
             do {
                 PatientHistory history = new PatientHistory();
-                history.setHistoryId(cursor.getInt(cursor.getColumnIndex("histry_id")));
-                history.setPatientPhn(cursor.getInt(cursor.getColumnIndex("patient_phn")));
-                history.setDateTime(cursor.getString(cursor.getColumnIndex("date_time")));
-                history.setWeight(cursor.getDouble(cursor.getColumnIndex("weight")));
-                history.setHeight(cursor.getDouble(cursor.getColumnIndex("height")));
-                history.setDiagnoses(cursor.getString(cursor.getColumnIndex("diagnoses")));
-                history.setTreatments(cursor.getString(cursor.getColumnIndex("treatments")));
+                history.setHistoryId(cursor.getInt(cursor.getColumnIndexOrThrow("history_id")));
+                history.setPatientPhn(cursor.getInt(cursor.getColumnIndexOrThrow("patient_phn")));
+                history.setDateTime(cursor.getString(cursor.getColumnIndexOrThrow("date_time")));
+                history.setWeight(cursor.getDouble(cursor.getColumnIndexOrThrow("weight")));
+                history.setHeight(cursor.getDouble(cursor.getColumnIndexOrThrow("height")));
+                history.setDiagnoses(cursor.getString(cursor.getColumnIndexOrThrow("diagnoses")));
+                history.setTreatments(cursor.getString(cursor.getColumnIndexOrThrow("treatments")));
                 histories.add(history);
             } while (cursor.moveToNext());
         }
@@ -49,18 +49,18 @@ public class PatientHistoryDAO {
         return histories;
     }
 
-    public PatientHistory getPatientHistoryById(int historyId) {
-        Cursor cursor = db.query("PATIENT_HISTORY", null, "histry_id = ?", new String[]{String.valueOf(historyId)}, null, null, null);
+    /*public PatientHistory getPatientHistoryById(int historyId) {
+        Cursor cursor = db.query("PATIENT_HISTORY", null, "history_id = ?", new String[]{String.valueOf(historyId)}, null, null, null);
 
         if (cursor != null && cursor.moveToFirst()) {
             PatientHistory history = new PatientHistory();
-            history.setHistoryId(cursor.getInt(cursor.getColumnIndex("histry_id")));
-            history.setPatientPhn(cursor.getInt(cursor.getColumnIndex("patient_phn")));
-            history.setDateTime(cursor.getString(cursor.getColumnIndex("date_time")));
-            history.setWeight(cursor.getDouble(cursor.getColumnIndex("weight")));
-            history.setHeight(cursor.getDouble(cursor.getColumnIndex("height")));
-            history.setDiagnoses(cursor.getString(cursor.getColumnIndex("diagnoses")));
-            history.setTreatments(cursor.getString(cursor.getColumnIndex("treatments")));
+            history.setHistoryId(cursor.getInt(cursor.getColumnIndexOrThrow("history_id")));
+            history.setPatientPhn(cursor.getInt(cursor.getColumnIndexOrThrow("patient_phn")));
+            history.setDateTime(cursor.getString(cursor.getColumnIndexOrThrow("date_time")));
+            history.setWeight(cursor.getDouble(cursor.getColumnIndexOrThrow("weight")));
+            history.setHeight(cursor.getDouble(cursor.getColumnIndexOrThrow("height")));
+            history.setDiagnoses(cursor.getString(cursor.getColumnIndexOrThrow("diagnoses")));
+            history.setTreatments(cursor.getString(cursor.getColumnIndexOrThrow("treatments")));
             cursor.close();
             return history;
         }
@@ -69,6 +69,49 @@ public class PatientHistoryDAO {
             cursor.close();
         }
         return null;
+    }*/
+
+    public PatientHistory getPatientHistoryById(int historyId) {
+        Cursor cursor = db.query("PATIENT_HISTORY", null, "history_id = ?", new String[]{String.valueOf(historyId)}, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            PatientHistory history = new PatientHistory();
+            history.setHistoryId(cursor.getInt(cursor.getColumnIndexOrThrow("history_id")));
+            history.setPatientPhn(cursor.getInt(cursor.getColumnIndexOrThrow("patient_phn")));
+            history.setDateTime(cursor.getString(cursor.getColumnIndexOrThrow("date_time")));
+            history.setWeight(cursor.getDouble(cursor.getColumnIndexOrThrow("weight")));
+            history.setHeight(cursor.getDouble(cursor.getColumnIndexOrThrow("height")));
+            history.setDiagnoses(cursor.getString(cursor.getColumnIndexOrThrow("diagnoses")));
+            history.setTreatments(cursor.getString(cursor.getColumnIndexOrThrow("treatments")));
+            cursor.close();
+            return history;
+        }
+
+        if (cursor != null) {
+            cursor.close();
+        }
+        return null;
+    }
+
+    public List<PatientHistory> getPatientHistoryByPhn(String phn) {
+        List<PatientHistory> historyList = new ArrayList<>();
+
+        String query = "SELECT * FROM PATIENT_HISTORY WHERE patient_phn = ? ORDER BY date_time DESC";
+        Cursor cursor = db.rawQuery(query, new String[]{phn});
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                String dateTime = cursor.getString(cursor.getColumnIndexOrThrow("date_time"));
+                int weight = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow("weight")));
+                int height = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow("height")));
+                String diagnosis = cursor.getString(cursor.getColumnIndexOrThrow("diagnoses"));
+                String treatments = cursor.getString(cursor.getColumnIndexOrThrow("treatments"));
+
+                historyList.add(new PatientHistory(dateTime, weight, height, diagnosis, treatments));
+            }
+            cursor.close();
+        }
+
+        return historyList;
     }
 
     public int updatePatientHistory(PatientHistory history) {
@@ -80,10 +123,10 @@ public class PatientHistoryDAO {
         values.put("diagnoses", history.getDiagnoses());
         values.put("treatments", history.getTreatments());
 
-        return db.update("PATIENT_HISTORY", values, "histry_id = ?", new String[]{String.valueOf(history.getHistoryId())});
+        return db.update("PATIENT_HISTORY", values, "history_id = ?", new String[]{String.valueOf(history.getHistoryId())});
     }
 
     public int deletePatientHistory(int historyId) {
-        return db.delete("PATIENT_HISTORY", "histry_id = ?", new String[]{String.valueOf(historyId)});
+        return db.delete("PATIENT_HISTORY", "history_id = ?", new String[]{String.valueOf(historyId)});
     }
 }
