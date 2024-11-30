@@ -19,6 +19,39 @@
             android:name=".SignUp"
             android:exported="false" />
         <activity
+            android:name=".ViewPatient"
+            android:exported="false" />
+        <activity
+            android:name=".view_appointment"
+            android:exported="false" />
+        <activity
+            android:name=".update_appointment"
+            android:exported="false" />
+        <activity
+            android:name=".PatientManagement"
+            android:exported="false" />
+        <activity
+            android:name=".medication"
+            android:exported="false" />
+        <activity
+            android:name=".appointment"
+            android:exported="false" />
+        <activity
+            android:name=".AddPatientHistory"
+            android:exported="false" />
+        <activity
+            android:name=".add_medication"
+            android:exported="false" />
+        <activity
+            android:name=".add_appointment"
+            android:exported="false" />
+        <activity
+            android:name=".UpdatePatient"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPatientHistory"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>
