@@ -1,6 +1,8 @@
 package com.example.healthconnect.datamodel;
 
-public class Doctor {
+import java.io.Serializable;
+
+public class Doctor implements Serializable {
     private int practitionerId;
     private String name;
     private String phone;

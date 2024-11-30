@@ -10,7 +10,7 @@
     <EditText
         android:id="@+id/txtPassword"
         android:layout_width="294dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:autofillHints="password"
         android:hint="@string/Password"
@@ -46,7 +46,7 @@
     <EditText
         android:id="@+id/txtPractitionerID"
         android:layout_width="294dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="@string/DoctorIDHint"
         android:inputType="text"
