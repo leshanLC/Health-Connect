@@ -147,7 +147,7 @@ public class ViewPatientHistory extends AppCompatActivity {
         headerPaint.setColor(Color.BLACK);
 
         Paint contentPaint = new Paint();
-        contentPaint.setTextSize(10);
+        contentPaint.setTextSize(12);
         contentPaint.setColor(Color.BLACK);
 
         Paint boldPaint = new Paint();
@@ -178,8 +178,8 @@ public class ViewPatientHistory extends AppCompatActivity {
 
         // Draw the logo in the header
 //        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo); // Assuming the logo is in drawable
-//        int logoWidth = 20;
-//        int logoHeight = 20; //(logoBitmap.getHeight() * logoWidth) / logoBitmap.getWidth(); // Scale the logo proportionally
+//        int logoWidth = 5;
+//        int logoHeight = 5; //(logoBitmap.getHeight() * logoWidth) / logoBitmap.getWidth(); // Scale the logo proportionally
 //        canvas.drawBitmap(logoBitmap, 10, yPosition, null);
 //        yPosition += logoHeight + 10;
 
@@ -201,19 +201,10 @@ public class ViewPatientHistory extends AppCompatActivity {
         // Printing the result set
         for (PatientHistory history : historyList) {
 
-//            canvas.drawText("• Date/Time: " + history.getDateTime(), 40, yPosition, contentPaint);
-//            yPosition += 25;
-//            canvas.drawText("• Weight: " + history.getWeight() + " kg", 40, yPosition, contentPaint);
-//            yPosition += 25;
-//            canvas.drawText("• Height: " + history.getHeight() + " cm", 40, yPosition, contentPaint);
-//            yPosition += 25;
-//            canvas.drawText("• Diagnoses: " + history.getDiagnoses() , 40, yPosition, contentPaint);
-//            yPosition += 25;
-//            canvas.drawText("• Treatments: " + history.getTreatments(), 40, yPosition, contentPaint);
-//            yPosition += 25;
-
             int labelX = 40;
             int valueX = 120;
+
+            yPosition += 5;
 
             canvas.drawText("• Date/Time: ", labelX, yPosition, contentPaint);
             canvas.drawText(history.getDateTime(), valueX, yPosition, contentPaint);
@@ -274,7 +265,7 @@ public class ViewPatientHistory extends AppCompatActivity {
 
     private void drawFooter(Canvas canvas, Paint footerPaint, int pageWidth, int pageHeight, int pageNumber, Patient patient) {
         // Draw footer with page number
-        String footerText = "Confidential | Page " + pageNumber + " | Patient Name: " + patient.getName() ;
+        String footerText = "Confidential | Page " + (pageNumber + 1) + " | Patient Name: " + patient.getName() ;
         float textWidth = footerPaint.measureText(footerText);
         float xPosition = pageWidth - textWidth - 20;
         canvas.drawText(footerText, xPosition, pageHeight - 20, footerPaint);
