@@ -73,7 +73,8 @@ public class ViewPatientHistory extends AppCompatActivity {
                 String phn = getIntent().getStringExtra("phn");
                 Intent intent = new Intent(ViewPatientHistory.this, AddPatientHistory.class);
                 intent.putExtra("phn", phn);
-                startActivity(intent);
+                //startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -96,6 +97,17 @@ public class ViewPatientHistory extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            // Reload the patient history
+            loadPatientHistory(edtPhn.getText().toString().trim());
+        }
+    }
+
 
     private void generatePdf() {
         String phn = edtPhn.getText().toString().trim();

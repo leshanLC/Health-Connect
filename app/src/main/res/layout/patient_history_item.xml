@@ -23,7 +23,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="Date/Time"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="Weight"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txtHeight"
@@ -42,7 +42,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="Height"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txtDiagnoses"
@@ -51,7 +51,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="Diagnoses"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txtTreatments"
@@ -60,7 +60,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="Treatments"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <!-- New Horizontal LinearLayout for buttons -->
         <LinearLayout

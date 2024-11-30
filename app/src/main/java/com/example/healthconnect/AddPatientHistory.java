@@ -55,10 +55,11 @@ public class AddPatientHistory extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phn = edtPhn.getText().toString();
-                Intent intent = new Intent(AddPatientHistory.this, ViewPatientHistory.class);
-                intent.putExtra("phn", Integer.parseInt(phn));
-                startActivity(intent);
+//                String phn = edtPhn.getText().toString();
+//                Intent intent = new Intent(AddPatientHistory.this, ViewPatientHistory.class);
+//                intent.putExtra("phn", Integer.parseInt(phn));
+//                startActivity(intent);
+//                finish();
                 finish();
             }
         });
@@ -66,7 +67,8 @@ public class AddPatientHistory extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddPatientHistory.this, ViewPatientHistory.class));
+//                startActivity(new Intent(AddPatientHistory.this, ViewPatientHistory.class));
+                finish();
             }
         });
 
@@ -141,6 +143,10 @@ public class AddPatientHistory extends AppCompatActivity {
 
         if(result != -1){
             Toast.makeText(this, "Patient history added successfully", Toast.LENGTH_SHORT).show();
+            //finish();
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("newRecordAdded", true); // Optional: Include additional info if needed
+            setResult(RESULT_OK, resultIntent);
             finish();
         }else{
             Toast.makeText(this, "Failed to add the history record", Toast.LENGTH_SHORT).show();
