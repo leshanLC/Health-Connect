@@ -46,20 +46,21 @@ public class AppointmentDAO {
     public Appointment getAppointmentById(int id) {
         Cursor cursor = db.query("APPOINTMENT", null, "id = ?", new String[]{String.valueOf(id)}, null, null, null);
 
+        Appointment appointment = new Appointment();
+
         if (cursor != null && cursor.moveToFirst()) {
-            Appointment appointment = new Appointment();
             appointment.setId(cursor.getInt(cursor.getColumnIndex("id")));
             appointment.setPatientPhn(cursor.getInt(cursor.getColumnIndex("patient_phn")));
             appointment.setDateTime(cursor.getString(cursor.getColumnIndex("date_time")));
             appointment.setReason(cursor.getString(cursor.getColumnIndex("reason")));
             cursor.close();
-            return appointment;
         }
 
         if (cursor != null) {
             cursor.close();
         }
-        return null;
+
+        return appointment;
     }
 
     public int updateAppointment(Appointment appointment) {

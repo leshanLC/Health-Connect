@@ -3,7 +3,7 @@
     <string name="txtAppointmentHeading">Appointments</string>
     <string name="txtSearchAppointment">Search an appointment</string>
     <string name="txtAddAppointmentTitle">Add New Appointment</string>
-    <string name="txtAppointmentTitle">Appointment Title</string>
+    <string name="txtAppointmentTitle">Appointment ID</string>
     <string name="btnViewAppointment">View</string>
     <string name="btnUpdateAppointment">Update</string>
     <string name="btnDeleteAppointment">Delete</string>
@@ -13,9 +13,9 @@
     <string name="txtAppointmentID">Appointment ID</string>
     <string name="txtPatientName">Patient Name</string>
     <string name="txtPatientHealthNumber">Personal Health Number</string>
-    <string name="txtPatientPhoneNumber">Phone NUmber</string>
+    <string name="txtPatientPhoneNumber">Phone Number</string>
     <string name="txtPatientGender">Gender</string>
-    <string name="txtPatientDOB">DOB</string>"
+    <string name="txtAppointmentDate">Date</string>
     <string name="txtDoctorName">Doctor Name</string>
     <string name="txtDate">Date</string>
     <string name="txtTime">Time</string>
@@ -53,4 +53,12 @@
     <string name="viewPatient"> View Patient </string>
     <string name="modifyPatient"> Update Patient </string>
     <string name="deletePatient"> Delete Patient </string>
+    <string name="txtMedId">Medicine Number</string>
+    <string name="txtMedHistoryId">Medicine Reference Number</string>
+    <string name="btnSendEmail">Send Email Reminder</string>
+    <string name="txtMail">Send Reminder</string>
+    <string name="txtReceiverAddress">Receiver Address :</string>
+    <string name="txtMailSubject">Subject :</string>
+    <string name="txtMailBody">Body :</string>
+    <string name="txtReminderSubject">Reminder for your upcoming appointment</string>
 </resources>

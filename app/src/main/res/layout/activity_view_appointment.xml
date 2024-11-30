@@ -7,156 +7,62 @@
     android:layout_height="match_parent"
     tools:context=".view_appointment">
 
-    <EditText
-        android:id="@+id/txtDoctorName"
+    <TextView
+        android:id="@+id/txtDateTime"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:autofillHints=""
-        android:editable="false"
         android:ems="10"
-        android:inputType="text"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintVertical_bias="0.208"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
 
-    <EditText
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="@string/txtAppointmentDate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.208" />
+
+    <TextView
         android:id="@+id/txtPatientPhoneNumber"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:autofillHints=""
-        android:editable="false"
         android:ems="10"
-        android:inputType="text"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/txtPatientHealthNumber"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:autofillHints=""
-        android:editable="false"
-        android:ems="10"
-        android:inputType="text"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/txtPatientName"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:autofillHints=""
-        android:editable="false"
-        android:ems="10"
-        android:inputType="text"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintVertical_bias="0.29"
+        tools:ignore="LabelFor,TextFields,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/txtPatientGender"
+    <TextView
+        android:id="@+id/txtAppointmentReason"
         android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_height="150dp"
         android:autofillHints=""
-        android:editable="false"
         android:ems="10"
-        android:inputType="text"
-        android:text=""
+        android:gravity="start|top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/txtPatientsGender"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:autofillHints=""
-        android:editable="false"
-        android:ems="10"
-        android:inputType="text"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtAppointmentReason"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.509" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtPatientDOB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtPatientGender"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtPatientHealthNumber"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.45"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView12"
@@ -165,67 +71,37 @@
         android:text="@string/txtPatientPhoneNumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
+        app:layout_constraintVertical_bias="0.289"
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView13"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="@string/txtDoctorName"
+        android:text="@string/txtAppointmentReason"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtPatientName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/txtAppointmentID"
         android:layout_width="180dp"
         android:layout_height="35dp"
-        android:text="@string/txtAppointmentID"
+        android:text="@string/txtAppointmentTitle"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
-
-    <EditText
-        android:id="@+id/txtAppointmentReason"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:autofillHints=""
-        android:editable="false"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.906"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605"
-        tools:ignore="Deprecated,LabelFor,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.041"
+        tools:ignore="TextSizeCheck" />
 
     <Button
         android:id="@+id/btnGoBack"
@@ -237,21 +113,8 @@
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
-        tools:ignore="MissingConstraints,TextSizeCheck,TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/btnUpdateAppointment"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:text="@string/btnUpdateAppointment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.041"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,TextSizeCheck" />
 
     <Button
         android:id="@+id/btnDeleteAppointment"
@@ -260,10 +123,24 @@
         android:text="@string/btnDeleteAppointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896"
+        app:layout_constraintVertical_bias="0.86"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnUpdateAppointment"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="@string/btnUpdateAppointment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,7 @@
         tools:ignore="MissingConstraints,TouchTargetSizeCheck,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/txtPatientHealthNumber"
+        android:id="@+id/txtMedName"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -87,7 +87,7 @@
         android:id="@+id/textView17"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="@string/txtMedicationTitle"
+        android:text="@string/txtMedHistoryId"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
         app:layout_constraintVertical_bias="0.556" />
 
     <EditText
-        android:id="@+id/txtMedicationName"
+        android:id="@+id/txtMedHistoryID"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -202,7 +202,7 @@
         android:id="@+id/textView18"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="@string/txtPatientHealthNumber"
+        android:text="@string/txtMedicationTitle"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -213,7 +213,7 @@
         tools:ignore="TextSizeCheck" />
 
     <Button
-        android:id="@+id/btnUpdateAppointment"
+        android:id="@+id/btnAdd"
         android:layout_width="184dp"
         android:layout_height="52dp"
         android:text="@string/btnAddMedication"

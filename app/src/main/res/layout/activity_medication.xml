@@ -23,7 +23,7 @@
         tools:ignore="TextSizeCheck" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAdd"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:text="@string/btnAddAppointment"
@@ -36,13 +36,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="380dp"
-        android:layout_height="600dp"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.4"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,45 +14,132 @@
 
         <LinearLayout
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:gravity="start"
             android:orientation="vertical">
 
-            <!-- Appointment heading -->
-            <TextView
-                android:id="@+id/txtAppointmentTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_margin="5dp"
-                android:text="@string/txtAppointmentTitle"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- Appointment date -->
-            <TextView
-                android:id="@+id/txtAppointmentDate"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:layout_margin="5dp"
-                android:text="@string/txtDate"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txtID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:text="@string/txtAppointmentTitle"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtAppointmentID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-            <!-- Appointment time -->
-            <TextView
-                android:id="@+id/txtAppointmentTime"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:padding="3dp"
-                android:text="@string/txtTime"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_margin="5dp"
+                    android:text="@string/txtPatientPhoneNumber"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtPatientPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_margin="5dp"
+                    android:text="@string/txtDate"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtAppointmentDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtReason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="3dp"
+                    android:text="@string/txtAppointmentReason"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtAppointmentReason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/btnSendEmail"
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/btnViewAppointment"
+                    android:text="@string/btnSendEmail"
+                    tools:ignore="ImageContrastCheck" />
+
+            </LinearLayout>
+
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="75dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
             android:orientation="vertical">
 

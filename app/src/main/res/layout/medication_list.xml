@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp">
 
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
         tools:ignore="UselessParent">
 
         <LinearLayout
@@ -24,7 +24,61 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="2dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblId"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedId"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/txtMedID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/lblHistoryID"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMedHistoryId"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/txtMedHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:gravity="start"
                 android:orientation="horizontal"
                 android:padding="5dp"
@@ -35,8 +89,8 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="@string/txtMedicationTitle"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
+
                     tools:ignore="TextSizeCheck" />
 
                 <TextView
@@ -44,38 +98,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:gravity="start"
-                android:orientation="horizontal"
-                android:padding="5dp"
-                tools:ignore="UselessParent">
-
-                <TextView
-                    android:id="@+id/lblHealthNumber"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtPatientHealthNumber"
-                    android:textSize="13sp"
-                    tools:ignore="TextSizeCheck" />
-
-                <TextView
-                    android:id="@+id/txtHealthNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="13sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="2dp"
                 android:gravity="start"
                 android:orientation="horizontal"
                 android:padding="5dp"
@@ -99,7 +128,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="2dp"
                 android:gravity="start"
                 android:orientation="horizontal"
                 android:padding="5dp"
@@ -123,7 +152,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="2dp"
                 android:gravity="start"
                 android:orientation="horizontal"
                 android:padding="5dp"
@@ -147,7 +176,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="2dp"
                 android:gravity="start"
                 android:orientation="horizontal"
                 android:padding="5dp"
@@ -169,4 +198,4 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.cardview.widget.CardView>
