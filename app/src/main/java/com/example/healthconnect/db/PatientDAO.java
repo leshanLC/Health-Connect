@@ -97,30 +97,39 @@ public class PatientDAO {
         return db.delete("PATIENT", "phn = ?", new String[]{String.valueOf(phn)});
     }
 
-    public List<Appointment> getAppointmentsByPractitionerId(int practitionerId) {
-        List<Appointment> appointments = new ArrayList<>();
+    public List<Patient> getPatientsByPractitionerId(int practitionerId) {
+        List<Patient> patients = new ArrayList<>();
 
-        // Query to join PATIENT and APPOINTMENT tables
-        String query = "SELECT A.id, A.patient_phn, A.date_time, A.reason " +
-                "FROM APPOINTMENT A " +
-                "INNER JOIN PATIENT P ON A.patient_phn = P.phn " +
-                "WHERE P.practitioner_id = ?";
-
-        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(practitionerId)});
+        // Query the database
+        Cursor cursor = db.query(
+                "PATIENT",
+                null,
+                "practitioner_id = ?",
+                new String[]{String.valueOf(practitionerId)},
+                null,
+                null,
+                null
+        );
 
         // Process the results
-        if (cursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
-                Appointment appointment = new Appointment();
-                appointment.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                appointment.setPatientPhn(cursor.getInt(cursor.getColumnIndex("patient_phn")));
-                appointment.setDateTime(cursor.getString(cursor.getColumnIndex("date_time")));
-                appointment.setReason(cursor.getString(cursor.getColumnIndex("reason")));
-                appointments.add(appointment);
+                Patient patient = new Patient();
+                patient.setPhn(cursor.getInt(cursor.getColumnIndex("phn")));
+                patient.setName(cursor.getString(cursor.getColumnIndex("name")));
+                patient.setBirthday(cursor.getString(cursor.getColumnIndex("birthday")));
+                patient.setGender(cursor.getString(cursor.getColumnIndex("gender")));
+                patient.setAddress(cursor.getString(cursor.getColumnIndex("address")));
+                patient.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
+                patient.setPractitionerId(cursor.getInt(cursor.getColumnIndex("practitioner_id")));
+                patients.add(patient);
             } while (cursor.moveToNext());
+
+            cursor.close();
         }
-        cursor.close();
-        return appointments;
+
+        return patients;
     }
+
 
 }
