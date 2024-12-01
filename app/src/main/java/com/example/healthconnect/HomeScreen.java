@@ -1,5 +1,6 @@
 package com.example.healthconnect;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,15 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home_screen);
+
+        ImageView ivLogOut = (ImageView)findViewById(R.id.ivLogOut);
+
+        ivLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, Login.class));
+            }
+        });
 
         Doctor doctor = (Doctor) getIntent().getSerializableExtra("doctor");
 

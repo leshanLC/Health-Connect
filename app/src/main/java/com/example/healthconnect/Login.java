@@ -48,18 +48,22 @@ public class Login extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int doctorID = Integer.parseInt(txtDoctorID.getText().toString());
-                doctor = doctorDAO.getDoctorById(doctorID);
-                if (doctor == null){
-                    Toast.makeText(Login.this, "Error: Invalid username!", Toast.LENGTH_SHORT).show();
-                }
-                if (doctor != null && txtPassword.getText().toString().equals(doctor.getPassword())){
-                    Intent intent = new Intent(Login.this, HomeScreen.class);
-                    intent.putExtra("doctor",doctor);
-                    startActivity(intent);
+                if(txtDoctorID.getText().toString().isEmpty() || txtPassword.getText().toString().isEmpty()){
+                    Toast.makeText(Login.this, "Error: Invalid Practitioner ID or Password Empty!", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(Login.this, "Error: Invalid password!", Toast.LENGTH_SHORT).show();
+                    int doctorID = Integer.parseInt(txtDoctorID.getText().toString());
+                    doctor = doctorDAO.getDoctorById(doctorID);
+                    if (doctor == null){
+                        Toast.makeText(Login.this, "Error: Invalid Practitioner ID!", Toast.LENGTH_SHORT).show();
+                    }
+                    if (doctor != null && txtPassword.getText().toString().equals(doctor.getPassword())){
+                        Intent intent = new Intent(Login.this, HomeScreen.class);
+                        intent.putExtra("doctor",doctor);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(Login.this, "Error: Invalid Password!", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
             }
         });

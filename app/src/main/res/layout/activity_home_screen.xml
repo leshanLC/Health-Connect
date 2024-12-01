@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:text=""
-        app:layout_constraintEnd_toStartOf="@+id/ivWelcome"
+        app:layout_constraintEnd_toStartOf="@+id/ivLogOut"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:id="@+id/AppointmentLayout"
         android:layout_width="360dp"
         android:layout_height="240dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,17 +36,40 @@
             android:background="@color/black" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnManagePatient"
+    <TextView
+        android:id="@+id/tvUpAppointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginTop="64dp"
+        android:text="@string/UpAppointment"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogOut" />
+
+    <ImageView
+        android:id="@+id/ivLogOut"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/log_off" />
+
+    <Button
+        android:id="@+id/btnManagePatient"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/patient"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnManageAppointment"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ConsultHistoryLayout"
-        app:layout_constraintVertical_bias="0.522" />
+        app:layout_constraintVertical_bias="0.461" />
 
     <LinearLayout
         android:id="@+id/ConsultHistoryLayout"
@@ -64,35 +87,11 @@
             android:background="@color/black" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnManageAppointment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="44dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ConsultHistoryLayout"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvUpAppointment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="@string/UpAppointment"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivWelcome" />
-
     <TextView
         android:id="@+id/tvConsultationHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="40dp"
         android:text="@string/ConsultHistory"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,14 +99,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AppointmentLayout" />
 
-    <ImageView
-        android:id="@+id/ivWelcome"
-        android:layout_width="32dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="32dp"
+    <Button
+        android:id="@+id/btnManageAppointment"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/appointment"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/log_off" />
+        app:layout_constraintTop_toBottomOf="@+id/ConsultHistoryLayout"
+        app:layout_constraintVertical_bias="0.223" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

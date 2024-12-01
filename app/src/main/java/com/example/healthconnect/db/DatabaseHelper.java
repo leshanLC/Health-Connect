@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "health_connect.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -84,17 +84,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Insert patients with varying criteria for each doctor
         String[] patientDetails = {
-                "(1, 'Alice', '2010-05-12', 'Female', '456 Elm St', '1231111111', 1)", // Child (Female)
-                "(2, 'Bob', '1985-07-21', 'Male', '789 Maple Ave', '1232222222', 1)",  // Adult (Male)
-                "(3, 'Clara', '2015-02-18', 'Female', '321 Oak St', '1233333333', 1)", // Child (Female)
-                "(4, 'David', '1990-03-30', 'Male', '654 Pine Rd', '1234444444', 1)",  // Adult (Male)
-                "(5, 'Eva', '2005-10-01', 'Female', '987 Birch Ln', '1235555555', 1)", // Teen (Female)
+                "(1, 'Alice Jay', '2010-05-12', 'Female', '456 Elm St', '1231111111', 1)", // Child (Female)
+                "(2, 'Bob Dilan', '1985-07-21', 'Male', '789 Maple Ave', '1232222222', 1)",  // Adult (Male)
+                "(3, 'Clara Ian', '2015-02-18', 'Female', '321 Oak St', '1233333333', 1)", // Child (Female)
+                "(4, 'David Lam', '1990-03-30', 'Male', '654 Pine Rd', '1234444444', 1)",  // Adult (Male)
+                "(5, 'Eva Kim', '2005-10-01', 'Female', '987 Birch Ln', '1235555555', 1)", // Teen (Female)
 
-                "(6, 'Frank', '2008-06-15', 'Male', '123 Willow Dr', '9871111111', 2)", // Child (Male)
-                "(7, 'Grace', '1995-08-23', 'Female', '456 Cedar Ct', '9872222222', 2)", // Adult (Female)
-                "(8, 'Hank', '2012-11-11', 'Male', '789 Spruce St', '9873333333', 2)",  // Child (Male)
-                "(9, 'Ivy', '1988-12-20', 'Female', '321 Aspen Ln', '9874444444', 2)",  // Adult (Female)
-                "(10, 'Jack', '2003-09-05', 'Male', '654 Fir Pl', '9875555555', 2)"    // Teen (Male)
+                "(6, 'Frank Sue', '2008-06-15', 'Male', '123 Willow Dr', '9871111111', 2)", // Child (Male)
+                "(7, 'Grace Dipp', '1995-08-23', 'Female', '456 Cedar Ct', '9872222222', 2)", // Adult (Female)
+                "(8, 'Hank Tom', '2012-11-11', 'Male', '789 Spruce St', '9873333333', 2)",  // Child (Male)
+                "(9, 'Ivy Lee', '1988-12-20', 'Female', '321 Aspen Ln', '9874444444', 2)",  // Adult (Female)
+                "(10, 'Jack Ray', '2003-09-05', 'Male', '654 Fir Pl', '9875555555', 2)"    // Teen (Male)
         };
 
         for (String patient : patientDetails) {
