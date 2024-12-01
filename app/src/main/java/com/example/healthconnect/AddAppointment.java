@@ -11,10 +11,9 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthconnect.datamodel.Appointment;
 import com.example.healthconnect.db.AppointmentDAO;
 
-public class add_appointment extends AppCompatActivity {
+public class AddAppointment extends AppCompatActivity {
 
     private EditText txtPatientPhoneNumber;
     private EditText txtDateTime;
@@ -36,7 +35,7 @@ public class add_appointment extends AppCompatActivity {
         btnGoBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(add_appointment.this, appointment.class);
+                Intent intent = new Intent(AddAppointment.this, Appointment.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +57,7 @@ public class add_appointment extends AppCompatActivity {
         String dateTime = txtDateTime.getText().toString();
         String reason = txtReason.getText().toString();
 
-        Appointment appointment = new Appointment();
+        com.example.healthconnect.datamodel.Appointment appointment = new com.example.healthconnect.datamodel.Appointment();
         appointment.setPatientPhn(patientPhn);
         appointment.setDateTime(dateTime);
         appointment.setReason(reason);
@@ -68,14 +67,14 @@ public class add_appointment extends AppCompatActivity {
 
             if (success != -1) {
                 Toast.makeText(this, "Appointment added successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(add_appointment.this, appointment.class);
+                Intent intent = new Intent(AddAppointment.this, Appointment.class);
                 startActivity(intent);
                 finish();
             } else {
-                Toast.makeText(this, "Failed to add appointment", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Failed to add Appointment", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Log.e("AddAppointment", "Error adding appointment", e);
+            Log.e("AddAppointment", "Error adding Appointment", e);
             Toast.makeText(this, "An error occurred: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
 

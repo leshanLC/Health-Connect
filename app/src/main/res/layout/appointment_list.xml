@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:layout_margin="5dp"
-                    android:text="@string/txtPatientPhoneNumber"
+                    android:text="@string/txtPatientPHN"
                     android:textSize="14sp" />
 
                 <TextView
@@ -125,9 +125,11 @@
                 <Button
                     android:id="@+id/btnSendEmail"
                     android:layout_width="280dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:contentDescription="@string/btnViewAppointment"
                     android:text="@string/btnSendEmail"
+                    android:background="@drawable/green_button_200"
+                    style="@style/white_25"
                     tools:ignore="ImageContrastCheck" />
 
             </LinearLayout>
@@ -145,23 +147,26 @@
 
             <ImageButton
                 android:id="@+id/btnViewAppointment"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:contentDescription="@string/btnViewAppointment"
+                android:background="@drawable/view_icon"
                 tools:ignore="ImageContrastCheck" />
 
             <ImageButton
                 android:id="@+id/btnUpdateAppointment"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:contentDescription="@string/btnUpdateAppointment"
+                android:background="@drawable/edit_icon"
                 tools:ignore="ImageContrastCheck" />
 
             <ImageButton
                 android:id="@+id/btnDeleteAppointment"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:contentDescription="@string/btnDeleteAppointment"
+                android:background="@drawable/delete_icon"
                 tools:ignore="ImageContrastCheck" />
         </LinearLayout>
     </LinearLayout>

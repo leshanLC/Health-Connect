@@ -14,16 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.healthconnect.datamodel.HistoryMedication;
 import com.example.healthconnect.db.HistoryMedicationDAO;
 
-public class add_medication extends AppCompatActivity {
+public class AddMedication extends AppCompatActivity {
 
     private EditText txtMedHistoryID, txtMedName, txtMedicationDosage, txtMedicationStrength, txtMedicationForm, txtMedicationDuration;
     Button btnBack, btnAdd;
+    int hisID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_medication);
+
+        hisID = getIntent().getIntExtra("hisID", 0);
 
         txtMedicationDuration = findViewById(R.id.txtMedicationDuration);
         txtMedicationForm = findViewById(R.id.txtMedicationForm);
@@ -37,7 +40,7 @@ public class add_medication extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(add_medication.this, medication.class);
+                Intent intent = new Intent(AddMedication.this, Medication.class);
                 startActivity(intent);
             }
         });
@@ -57,7 +60,7 @@ public class add_medication extends AppCompatActivity {
             return;
         }
 
-        int historyId = Integer.parseInt(txtMedHistoryID.getText().toString());
+        int historyId = hisID;
         String medName = txtMedName.getText().toString();
         String medicationForm = txtMedicationForm.getText().toString();
         String medicationStrength = txtMedicationStrength.getText().toString();
@@ -76,11 +79,11 @@ public class add_medication extends AppCompatActivity {
             long success = historyMedicationDAO.addHistoryMedication(historyMedication);
             if (success != -1) {
                 Toast.makeText(this, "Medication added successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(add_medication.this, medication.class);
+                Intent intent = new Intent(AddMedication.this, Medication.class);
                 startActivity(intent);
                 finish();
             } else {
-                Toast.makeText(this, "Failed to add medication", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Failed to add Medication", Toast.LENGTH_SHORT).show();
 
             }
         }catch (Exception e){

@@ -10,14 +10,13 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthconnect.datamodel.Appointment;
 import com.example.healthconnect.db.AppointmentDAO;
 
-public class update_appointment extends AppCompatActivity {
+public class UpdateAppointment extends AppCompatActivity {
 
     private EditText txtDateTime, txtPatientPhoneNumber, txtAppointmentReason;
     private Button btnGoBack, btnUpdate;
-    private Appointment appointment;
+    private com.example.healthconnect.datamodel.Appointment appointment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +48,7 @@ public class update_appointment extends AppCompatActivity {
         btnUpdate.setOnClickListener(v -> updateAppointment());
 
         btnGoBack.setOnClickListener(v -> {
-            Intent intent = new Intent(update_appointment.this, appointment.class);
+            Intent intent = new Intent(UpdateAppointment.this, Appointment.class);
             startActivity(intent);
         });
 
@@ -75,14 +74,14 @@ public class update_appointment extends AppCompatActivity {
 
             if (success != -1) {
                 Toast.makeText(this, "Appointment added successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(update_appointment.this, appointment.class);
+                Intent intent = new Intent(UpdateAppointment.this, Appointment.class);
                 startActivity(intent);
                 finish();
             } else {
-                Toast.makeText(this, "Failed to add appointment", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Failed to add Appointment", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Log.e("AddAppointment", "Error adding appointment", e);
+            Log.e("AddAppointment", "Error adding Appointment", e);
             Toast.makeText(this, "An error occurred: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
 

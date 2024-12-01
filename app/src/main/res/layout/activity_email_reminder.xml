@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_appointment">
+    tools:context=".ViewAppointment">
 
   <EditText
       android:id="@+id/txtReceiverAddress"
@@ -13,8 +13,8 @@
       android:layout_height="40dp"
       android:autofillHints=""
       android:ems="10"
-      android:text=""
-      android:textSize="12sp"
+      android:hint="@string/EmailHint"
+      android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.9"
@@ -25,10 +25,10 @@
 
   <TextView
       android:id="@+id/textView9"
-      android:layout_width="100dp"
-      android:layout_height="40dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:text="@string/txtReceiverAddress"
-      android:textSize="14sp"
+      android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.045"
@@ -43,7 +43,7 @@
       android:autofillHints=""
       android:ems="10"
       android:text=""
-      android:textSize="12sp"
+      android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.906"
@@ -74,7 +74,7 @@
       android:layout_width="100dp"
       android:layout_height="40dp"
       android:text="@string/txtMailSubject"
-      android:textSize="14sp"
+      android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.051"
@@ -87,7 +87,7 @@
       android:layout_width="100dp"
       android:layout_height="40dp"
       android:text="@string/txtMailBody"
-      android:textSize="14sp"
+      android:textSize="18sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.045"
@@ -97,8 +97,9 @@
 
   <TextView
       android:id="@+id/txtAppointmentID"
-      android:layout_width="180dp"
-      android:layout_height="35dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="26sp"
       android:text="@string/btnSendEmail"
       android:textAlignment="center"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -113,7 +114,7 @@
       android:id="@+id/btnGoBack"
       android:layout_width="60dp"
       android:layout_height="40dp"
-      android:text="@string/btnBack"
+      android:background="@drawable/back_icon"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.045"
@@ -124,10 +125,12 @@
 
   <Button
       android:id="@+id/btnSend"
-      android:layout_width="match_parent"
+      android:layout_width="300dp"
       android:layout_height="50dp"
       android:layout_margin="10dp"
       android:text="@string/btnSendEmail"
+      android:background="@drawable/green_button_200"
+      style="@style/white_25"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.736"

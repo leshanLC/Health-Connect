@@ -10,12 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.healthconnect.datamodel.Appointment;
 import com.example.healthconnect.db.AppointmentDAO;
 
 import java.util.List;
 
-public class appointment extends AppCompatActivity {
+public class Appointment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class appointment extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         AppointmentDAO appointmentDAO = new AppointmentDAO(this);
-        List<Appointment> appointments = appointmentDAO.getAllAppointments();
+        List<com.example.healthconnect.datamodel.Appointment> appointments = appointmentDAO.getAllAppointments();
 
         AppointmentAdapter adapter = new AppointmentAdapter(appointments);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -36,7 +35,7 @@ public class appointment extends AppCompatActivity {
         btnAddAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(appointment.this, add_appointment.class);
+                Intent intent = new Intent(Appointment.this, AddAppointment.class);
                 startActivity(intent);
             }
         });

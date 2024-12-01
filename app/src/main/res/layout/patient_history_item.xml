@@ -63,6 +63,15 @@
             android:textSize="18sp" />
 
         <!-- New Horizontal LinearLayout for buttons -->
+
+        <Button
+            android:id="@+id/btnViewMedi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/btnViewMedication" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

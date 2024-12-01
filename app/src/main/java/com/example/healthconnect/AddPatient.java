@@ -19,19 +19,22 @@ import com.example.healthconnect.db.PatientDAO;
 
 import java.util.Calendar;
 
-public class TestActivity extends AppCompatActivity {
+public class AddPatient extends AppCompatActivity {
 
     private EditText edtPhn, edtName, edtBirthday, edtAddress, edtPhone, edtPractitionerId;
     private RadioGroup radioGroupGender;
     private RadioButton radioMale, radioFemale;
     private Button btnSavePatient, btnBack, btnCancel;
     private PatientDAO patientDAO;
+    int doctorID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_add_patient);
+
+        doctorID = getIntent().getIntExtra("doctorID", 1);
 
         btnSavePatient = findViewById(R.id.btnAddPatient);
         btnBack = findViewById(R.id.btnBack);
@@ -58,14 +61,14 @@ public class TestActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TestActivity.this, PatientManagement.class));
+                startActivity(new Intent(AddPatient.this, PatientManagement.class));
             }
         });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TestActivity.this, PatientManagement.class));
+                startActivity(new Intent(AddPatient.this, PatientManagement.class));
             }
         });
 
@@ -122,7 +125,7 @@ public class TestActivity extends AppCompatActivity {
         }
 
         int phn = Integer.parseInt(phnStr);
-        int practitionerId = Integer.parseInt(practitionerIdStr);
+        int practitionerId = doctorID;
 
         Patient patient = new Patient();
         patient.setPhn(phn);

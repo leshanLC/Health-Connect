@@ -21,7 +21,7 @@ import java.util.Locale;
 
 public class AddPatientHistory extends AppCompatActivity {
     EditText edtPhn, edtDateTime, edtWeight, edtHeight, edtDiagnosis, edtTreatment;
-    Button btnAddPatientHistory, btnCancel, btnBack;
+    Button btnAddPatientHistory, btnCancel, btnBack, btnAddMedic;
     PatientHistoryDAO patientHistoryDAO;
 
     @Override
@@ -39,6 +39,7 @@ public class AddPatientHistory extends AppCompatActivity {
         edtHeight = findViewById(R.id.edtHeight);
         edtDiagnosis = findViewById(R.id.edtDiagnosis);
         edtTreatment = findViewById(R.id.edtTreatments);
+        btnAddMedic = findViewById(R.id.btnAddMedication);
 
         patientHistoryDAO = new PatientHistoryDAO(this);
 
@@ -142,6 +143,17 @@ public class AddPatientHistory extends AppCompatActivity {
         long result = patientHistoryDAO.addPatientHistory(patientHistory);
 
         if(result != -1){
+
+            btnAddMedic.setVisibility(View.VISIBLE);
+            btnAddMedic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(AddPatientHistory.this, AddMedication.class);
+                    intent.putExtra("hisID",result);
+                    startActivity(intent);
+                }
+            });
+
             Toast.makeText(this, "Patient history added successfully", Toast.LENGTH_SHORT).show();
             //finish();
             Intent resultIntent = new Intent();

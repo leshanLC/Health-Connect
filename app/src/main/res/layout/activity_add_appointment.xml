@@ -5,16 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_appointment">
+    tools:context=".ViewAppointment">
 
     <EditText
         android:id="@+id/txtDateTime"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:autofillHints=""
-        android:ems="10"
+        android:textSize="22sp"
         android:inputType="text"
         android:text=""
+        android:hint="yyyy-mm-dd hh:mm:ss"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
@@ -25,9 +26,10 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtAppointmentDate"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -41,8 +43,9 @@
         android:layout_height="40dp"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="text"
-        android:text=""
+        android:inputType="phone"
+        android:textSize="22sp"
+        android:hint="(xxx) xxx xxxx"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
@@ -57,6 +60,7 @@
         android:layout_height="150dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="Appointment reason here "
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,9 +73,10 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtPatientPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtPatientPHN"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -82,9 +87,10 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtAppointmentReason"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -94,9 +100,10 @@
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtAddAppointmentTitle"
+        android:textSize="26sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +117,7 @@
         android:id="@+id/btnGoBack"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:text="@string/btnBack"
+        android:background="@drawable/back_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -121,15 +128,16 @@
 
     <Button
         android:id="@+id/btnAddAppointment"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/green_button_200"
+        style="@style/white_25"
         android:text="@string/btnSaveAppointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86"
+        app:layout_constraintVertical_bias="0.639"
         tools:ignore="MissingConstraints" />
 
 

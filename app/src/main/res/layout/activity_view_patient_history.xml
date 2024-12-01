@@ -61,6 +61,8 @@
         android:layout_height="wrap_content"
         android:text="@string/btnGeneratePDF"
         android:textSize="18sp"
+        android:background="@drawable/green_button_200"
+        style="@style/white_25"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "health_connect.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 9;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -104,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String[] parts = patient.split(",");
             int phn = Integer.parseInt(parts[0].replace("(", "").trim());
 
-            // Insert one appointment per patient
+            // Insert one Appointment per patient
             db.execSQL("INSERT INTO APPOINTMENT (patient_phn, date_time, reason) VALUES (" + phn + ", '2024-01-01 10:00:00', 'Routine Checkup');");
 
             // Insert five patient histories per patient

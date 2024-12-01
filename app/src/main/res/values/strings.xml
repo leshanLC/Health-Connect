@@ -3,7 +3,7 @@
     <string name="txtAppointmentHeading">Appointments</string>
     <string name="txtSearchAppointment">Search an appointment</string>
     <string name="txtAddAppointmentTitle">Add New Appointment</string>
-    <string name="txtAppointmentTitle">Appointment Title</string>
+    <string name="txtAppointmentTitle">Appointment Information</string>
     <string name="btnViewAppointment">View</string>
     <string name="btnUpdateAppointment">Update</string>
     <string name="btnDeleteAppointment">Delete</string>
@@ -13,7 +13,7 @@
     <string name="txtAppointmentID">Appointment ID</string>
     <string name="txtPatientName">Patient Name</string>
     <string name="txtPatientHealthNumber">Personal Health Number</string>
-    <string name="txtPatientPhoneNumber">Phone NUmber</string>
+    <string name="txtPatientPHN">Patient PHN</string>
     <string name="txtPatientGender">Gender</string>
     <string name="txtPatientDOB">DOB</string>"
     <string name="txtDoctorName">Doctor Name</string>
@@ -21,7 +21,7 @@
     <string name="txtTime">Time</string>
     <string name="txtAppointmentReason">Reason</string>
     <string name="btnAppointments">Appointments</string>
-    <string name="txtMedicationHead">Add Medication</string>
+    <string name="txtMedicationHead">Medication Information</string>
     <string name="txtMedicationTitle">Medication Name</string>
     <string name="txtMedicationForm">Medication Form</string>
     <string name="txtMedicationStrength">Strength</string>
@@ -79,4 +79,6 @@
     <string name="txtMailSubject">Subject :</string>
     <string name="txtMailBody">Body :</string>
     <string name="txtReminderSubject">Reminder for your upcoming appointment</string>
+    <string name="btnViewMedication">View Medication</string>
+    <string name="ViewMedication">View Medication</string>
 </resources>

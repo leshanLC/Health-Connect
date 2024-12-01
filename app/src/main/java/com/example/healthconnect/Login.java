@@ -11,8 +11,12 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthconnect.datamodel.HistoryMedication;
+import com.example.healthconnect.datamodel.PatientHistory;
 import com.example.healthconnect.db.DoctorDAO;
 import com.example.healthconnect.datamodel.Doctor;
+import com.example.healthconnect.db.HistoryMedicationDAO;
+import com.example.healthconnect.db.PatientHistoryDAO;
 
 import java.util.List;
 

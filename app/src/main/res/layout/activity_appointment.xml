@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appointment">
+    tools:context=".Appointment">
 
     <TextView
         android:id="@+id/textView"
@@ -26,7 +26,7 @@
         android:id="@+id/btnAddAppointment"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="@string/btnAddAppointment"
+        android:background="@drawable/plus_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"

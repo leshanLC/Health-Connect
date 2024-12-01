@@ -4,6 +4,7 @@
     <!-- Permissions required to generate the pdf -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -29,34 +30,37 @@
             android:name=".HomeScreen"
             android:exported="false" />
         <activity
+            android:name=".EmailReminder"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".ViewPatient"
             android:exported="false" />
         <activity
-            android:name=".view_appointment"
+            android:name=".ViewAppointment"
             android:exported="false" />
         <activity
-            android:name=".update_appointment"
+            android:name=".UpdateAppointment"
             android:exported="false" />
         <activity
             android:name=".PatientManagement"
             android:exported="false" />
         <activity
-            android:name=".medication"
+            android:name=".Medication"
             android:exported="false" />
         <activity
-            android:name=".appointment"
+            android:name=".Appointment"
             android:exported="false" />
         <activity
             android:name=".AddPatientHistory"
             android:exported="false" />
         <activity
-            android:name=".add_medication"
+            android:name=".AddMedication"
             android:exported="false" />
         <activity
-            android:name=".add_appointment"
+            android:name=".AddAppointment"
             android:exported="false" />
         <activity
             android:name=".UpdatePatient"
@@ -66,6 +70,9 @@
             android:exported="false" />
         <activity
             android:name=".Login"
+            android:exported="false"/>
+        <activity
+            android:name=".AddPatient"
             android:exported="false"/>
     </application>
 

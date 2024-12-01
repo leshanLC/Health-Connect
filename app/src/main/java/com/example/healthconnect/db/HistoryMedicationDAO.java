@@ -86,4 +86,34 @@ public class HistoryMedicationDAO {
     public int deleteHistoryMedication(int medId) {
         return db.delete("HISTORY_MEDICATION", "med_id = ?", new String[]{String.valueOf(medId)});
     }
+
+    public List<HistoryMedication> getMedicationsByHistoryId(int historyId) {
+        List<HistoryMedication> medications = new ArrayList<>();
+        Cursor cursor = db.query(
+                "HISTORY_MEDICATION",
+                null,
+                "history_id = ?",
+                new String[]{String.valueOf(historyId)},
+                null,
+                null,
+                null
+        );
+
+        if (cursor.moveToFirst()) {
+            do {
+                HistoryMedication medication = new HistoryMedication();
+                medication.setMedId(cursor.getInt(cursor.getColumnIndex("med_id")));
+                medication.setHistoryId(cursor.getInt(cursor.getColumnIndex("history_id")));
+                medication.setMedicineName(cursor.getString(cursor.getColumnIndex("medicine_name")));
+                medication.setForm(cursor.getString(cursor.getColumnIndex("form")));
+                medication.setStrength(cursor.getString(cursor.getColumnIndex("strength")));
+                medication.setDosage(cursor.getString(cursor.getColumnIndex("dosage")));
+                medication.setDuration(cursor.getString(cursor.getColumnIndex("duration")));
+                medications.add(medication);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return medications;
+    }
+
 }

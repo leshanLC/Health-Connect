@@ -55,12 +55,22 @@ public class PatientHistoryAdapter extends BaseAdapter {
         TextView txtHeight = convertView.findViewById(R.id.txtHeight);
         TextView txtDiagnoses = convertView.findViewById(R.id.txtDiagnoses);
         TextView txtTreatments = convertView.findViewById(R.id.txtTreatments);
+        Button btnViewMedi = convertView.findViewById(R.id.btnViewMedi);
 
         txtDateTime.setText("Date/Time1: " + history.getDateTime());
         txtWeight.setText("Weight: " + history.getWeight() + " kg");
         txtHeight.setText("Height: " + history.getHeight() + " cm");
         txtDiagnoses.setText("Diagnoses: " + history.getDiagnoses());
         txtTreatments.setText("Treatments: " + history.getTreatments());
+
+        btnViewMedi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Medication.class);
+                intent.putExtra("historyID",history.getHistoryId());
+                context.startActivity(intent);
+            }
+        });
 
         return convertView;
     }

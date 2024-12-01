@@ -35,6 +35,17 @@ public class PatientManagement extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_patient_management);
 
+        int doctorID = getIntent().getIntExtra("doctorID", 1);
+
+        Button btnBack = (Button) findViewById(R.id.btnBackHome);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PatientManagement.this, HomeScreen.class));
+            }
+        });
+
         recyclerViewPatients = findViewById(R.id.recyclerViewPatients);
         recyclerViewPatients.setLayoutManager(new LinearLayoutManager(this));
         edtSearchPatients = findViewById(R.id.edtSearchPatient);
@@ -49,7 +60,9 @@ public class PatientManagement extends AppCompatActivity {
         btnAddPatients.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PatientManagement.this, TestActivity.class));
+                Intent intent = new Intent(PatientManagement.this, AddPatient.class);
+                intent.putExtra("doctorID",doctorID);
+                startActivity(intent);
             }
         });
 

@@ -2,6 +2,7 @@ package com.example.healthconnect;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +13,9 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 
-import com.example.healthconnect.datamodel.Appointment;
 import com.example.healthconnect.db.AppointmentDAO;
-import com.example.healthconnect.db.DoctorDAO;
 import com.example.healthconnect.datamodel.Doctor;
 import com.example.healthconnect.db.PatientDAO;
 import com.example.healthconnect.datamodel.Patient;
@@ -27,7 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -41,6 +36,8 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         ImageView ivLogOut = (ImageView)findViewById(R.id.ivLogOut);
+        Button mngPatient = (Button) findViewById(R.id.btnManagePatient);
+        Button mngAppointment = (Button) findViewById(R.id.btnManageAppointment);
 
         ivLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,22 +46,40 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+
+
+        mngAppointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, Appointment.class));
+            }
+        });
+
         Doctor doctor = (Doctor) getIntent().getSerializableExtra("doctor");
 
         welcomeText = (TextView) findViewById(R.id.tvWelcome);
         welcomeText.setText("Welcome "+ doctor.getName());
-        welcomeText.setTextSize(20);
+        welcomeText.setTextSize(22);
         PatientDAO patientDAO = new PatientDAO(this);
         AppointmentDAO appointmentDAO = new AppointmentDAO(this);
 
         patientsHistory = (LinearLayout) findViewById(R.id.ConsultHistoryLayout);
         upcomingAppointment = (LinearLayout) findViewById(R.id.AppointmentLayout);
 
+        mngPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeScreen.this, PatientManagement.class);
+                intent.putExtra("doctorID",doctor.getPractitionerId());
+                startActivity(intent);
+            }
+        });
+
         List<Patient> patients = patientDAO.getPatientsByPractitionerId(doctor.getPractitionerId());
         getConsultationHistory(patients);
 
-        List<Appointment> as = appointmentDAO.getAllAppointments();
-        List<Appointment> appointments = appointmentDAO.getAppointmentsByPractitionerId(doctor.getPractitionerId());
+        List<com.example.healthconnect.datamodel.Appointment> as = appointmentDAO.getAllAppointments();
+        List<com.example.healthconnect.datamodel.Appointment> appointments = appointmentDAO.getAppointmentsByPractitionerId(doctor.getPractitionerId());
         getUpcomingAppointments(appointments, patientDAO);
 
     }
@@ -110,13 +125,24 @@ public class HomeScreen extends AppCompatActivity {
             }
 
 
+            Drawable blueBtn = getDrawable(R.drawable.blue_button);
             patientName.setText(patient.getName());
             patientName.setTextSize(16);
             patientName.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             patientName.setPadding(20, 8, 8, 8);
             viewBtn.setText("View");
-            viewBtn.setTextSize(10);
-            viewBtn.setMaxWidth(50);
+            viewBtn.setTextSize(16);
+            viewBtn.setBackground(blueBtn);
+            viewBtn.setTextColor(Color.WHITE);
+            viewBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(HomeScreen.this, ViewPatient.class);
+                    intent.putExtra("phn", patient.getPhn());
+                    intent.putExtra("from", "home");
+                    startActivity(intent);
+                }
+            });
 
             TableRow.LayoutParams params = new TableRow.LayoutParams(
                     0, TableRow.LayoutParams.WRAP_CONTENT, 1.0f);
@@ -127,15 +153,16 @@ public class HomeScreen extends AppCompatActivity {
             tableRow.addView(patientImg);
             tableRow.addView(patientName);
             tableRow.addView(viewBtn);
+            tableRow.setPadding(0,10,0,10);
 
             patientsHistory.addView(tableRow);
         }
     }
 
-    public void getUpcomingAppointments(List<Appointment> appointments, PatientDAO patientDAO){
+    public void getUpcomingAppointments(List<com.example.healthconnect.datamodel.Appointment> appointments, PatientDAO patientDAO){
         for (int i = 0; i < 4; i++) {
 
-            Appointment appointment = appointments.get(i);
+            com.example.healthconnect.datamodel.Appointment appointment = appointments.get(i);
             TableRow tableRow = new TableRow(this);
             TextView patientName = new TextView(this);
             ImageView patientImg = new ImageView(this);
@@ -182,10 +209,22 @@ public class HomeScreen extends AppCompatActivity {
             patientName.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             patientName.setPadding(20, 15, 8, 8);
 
+            Drawable greenBackground = getDrawable(R.drawable.green_background);
             appointmentTime.setText(appointment.getDateTime());
             appointmentTime.setTextSize(16);
             appointmentTime.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            appointmentTime.setBackground(greenBackground);
+            appointmentTime.setTextColor(Color.WHITE);
             appointmentTime.setPadding(20, 15, 8, 8);
+            appointmentTime.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(HomeScreen.this, ViewAppointment.class);
+                    intent.putExtra("appointmentId", appointment.getId());
+                    intent.putExtra("from", "home");
+                    startActivity(intent);
+                }
+            });
 
             TableRow.LayoutParams params = new TableRow.LayoutParams(
                     0, TableRow.LayoutParams.WRAP_CONTENT, 1.0f);
@@ -196,6 +235,7 @@ public class HomeScreen extends AppCompatActivity {
             tableRow.addView(patientImg);
             tableRow.addView(patientName);
             tableRow.addView(appointmentTime);
+            tableRow.setPadding(0,10,0,10);
 
             upcomingAppointment.addView(tableRow);
         }

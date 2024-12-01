@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -44,6 +45,19 @@ public class ViewPatient extends AppCompatActivity {
         PatientDAO patientDAO = new PatientDAO(this);
 
         int phn = getIntent().getIntExtra("phn", -1);
+        String from = getIntent().getStringExtra("from");
+        ImageView homeBtn = (ImageView) findViewById(R.id.ivHomeBtn);
+        if (from!=null && from.equals("home")){
+            homeBtn.setVisibility(View.VISIBLE);
+            homeBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(ViewPatient.this, HomeScreen.class));
+                }
+            });
+        }
+
+
         if (phn != -1) {
             Patient patient = patientDAO.getPatientByPhn(phn);
             if (patient != null) {

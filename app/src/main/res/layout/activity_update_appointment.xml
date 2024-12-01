@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_appointment">
+    tools:context=".ViewAppointment">
 
     <EditText
         android:id="@+id/txtDateTime"
@@ -71,7 +71,7 @@
         android:id="@+id/textView12"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="@string/txtPatientPhoneNumber"
+        android:text="@string/txtPatientPHN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"

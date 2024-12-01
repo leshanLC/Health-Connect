@@ -22,7 +22,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     private final List<Appointment> appointments;
 
-    public AppointmentAdapter(List<Appointment> appointments) {
+    public AppointmentAdapter(List<com.example.healthconnect.datamodel.Appointment> appointments) {
         this.appointments = appointments;
     }
 
@@ -57,26 +57,26 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull AppointmentAdapter.ViewHolder holder, int position) {
-        Appointment appointment = appointments.get(position);
+        com.example.healthconnect.datamodel.Appointment appointment = appointments.get(position);
         holder.txtID.setText(String.valueOf(String.valueOf(appointment.getId())));
         holder.txtPhoneNumber.setText(String.valueOf(appointment.getPatientPhn()));
         holder.txtDateTime.setText(appointment.getDateTime());
         holder.txtReason.setText(appointment.getReason());
 
         holder.btnView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), view_appointment.class);
+            Intent intent = new Intent(v.getContext(), ViewAppointment.class);
             intent.putExtra("appointmentId", appointment.getId());
             v.getContext().startActivity(intent);
         });
 
         holder.btnUpdate.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), update_appointment.class);
+            Intent intent = new Intent(v.getContext(), UpdateAppointment.class);
             intent.putExtra("appointmentId", appointment.getId());
             v.getContext().startActivity(intent);
         });
 
         holder.btnDelete.setOnClickListener(v -> {
-            new AlertDialog.Builder(v.getContext()).setTitle("Delete Appointment").setMessage("Are you sure you want to delete this appointment?")
+            new AlertDialog.Builder(v.getContext()).setTitle("Delete Appointment").setMessage("Are you sure you want to delete this Appointment?")
                     .setPositiveButton("Yes", (dialog, which) -> {
                         AppointmentDAO appointmentDAO = new AppointmentDAO(v.getContext());
                         appointmentDAO.deleteAppointment(appointment.getId());
@@ -87,7 +87,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         });
 
         holder.btnSendEmail.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), email_reminder.class);
+            Intent intent = new Intent(v.getContext(), EmailReminder.class);
             intent.putExtra("appointmentId", appointment.getId());
             v.getContext().startActivity(intent);
             Log.d("Button Click", "Button clicked!");

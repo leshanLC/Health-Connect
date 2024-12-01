@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_appointment">
+    tools:context=".ViewAppointment">
 
     <TextView
         android:id="@+id/txtDateTime"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:autofillHints=""
+        android:textSize="22sp"
         android:ems="10"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,9 +25,10 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtAppointmentDate"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -36,9 +38,10 @@
 
     <TextView
         android:id="@+id/txtPatientPhoneNumber"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:autofillHints=""
+        android:textSize="22sp"
         android:ems="10"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,9 +69,10 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/txtPatientPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtPatientPHN"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -79,9 +83,10 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtAppointmentReason"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -91,10 +96,11 @@
 
     <TextView
         android:id="@+id/txtAppointmentID"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/txtAppointmentTitle"
         android:textAlignment="center"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -107,7 +113,7 @@
         android:id="@+id/btnGoBack"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:text="@string/btnBack"
+        android:background="@drawable/back_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -121,6 +127,8 @@
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:text="@string/btnDeleteAppointment"
+        android:background="@drawable/blue_button_200"
+        style="@style/white_25"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
@@ -134,6 +142,8 @@
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:text="@string/btnUpdateAppointment"
+        android:background="@drawable/green_button_200"
+        style="@style/white_25"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
@@ -141,6 +151,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.86"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivHomeBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

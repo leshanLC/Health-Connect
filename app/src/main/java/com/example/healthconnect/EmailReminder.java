@@ -9,14 +9,10 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.healthconnect.datamodel.Appointment;
 import com.example.healthconnect.db.AppointmentDAO;
 
-public class email_reminder extends AppCompatActivity {
+public class EmailReminder extends AppCompatActivity {
 
     private TextView txtReceiver, txtSubject, txtBody;
     Button btnSend;
@@ -35,7 +31,7 @@ public class email_reminder extends AppCompatActivity {
         int appointmentId = getIntent().getIntExtra("appointmentId", -1);
 
         AppointmentDAO appointmentDAO = new AppointmentDAO(this);
-        Appointment appointment = appointmentDAO.getAppointmentById(appointmentId);
+        com.example.healthconnect.datamodel.Appointment appointment = appointmentDAO.getAppointmentById(appointmentId);
 
         if (appointmentId != -1) {
             String body = "Appointment details \n\n" +
@@ -73,7 +69,7 @@ public class email_reminder extends AppCompatActivity {
         mailAPI.sendEmail(recipientEmail, subject, messageBody);
 
         Toast.makeText(this, "Email sending in progress...", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, appointment.class);
+        Intent intent = new Intent(this, Appointment.class);
         startActivity(intent);
 
 
