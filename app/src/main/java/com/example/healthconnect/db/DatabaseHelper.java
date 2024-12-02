@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "health_connect.db";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 12;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -79,8 +79,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private void prepopulateData(SQLiteDatabase db) {
         // Insert doctors
-        db.execSQL("INSERT INTO DOCTOR VALUES (1, 'Dr. John Doe', '1234567890', 'john.doe@example.com', 'password123', 'Male');");
-        db.execSQL("INSERT INTO DOCTOR VALUES (2, 'Dr. Jane Smith', '0987654321', 'jane.smith@example.com', 'password456', 'Female');");
+        db.execSQL("INSERT INTO DOCTOR VALUES (1, 'John Doe', '1234567890', 'john.doe@example.com', 'password123', 'Male');");
+        db.execSQL("INSERT INTO DOCTOR VALUES (2, 'Jane Smith', '0987654321', 'jane.smith@example.com', 'password456', 'Female');");
 
         // Insert patients with varying criteria for each doctor
         String[] patientDetails = {
@@ -97,6 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "(10, 'Jack Ray', '2003-09-05', 'Male', '654 Fir Pl', '9875555555', 2)"    // Teen (Male)
         };
 
+        int index = 0;
         for (String patient : patientDetails) {
             db.execSQL("INSERT INTO PATIENT VALUES " + patient + ";");
 
@@ -105,12 +106,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int phn = Integer.parseInt(parts[0].replace("(", "").trim());
 
             // Insert one Appointment per patient
-            db.execSQL("INSERT INTO APPOINTMENT (patient_phn, date_time, reason) VALUES (" + phn + ", '2024-01-01 10:00:00', 'Routine Checkup');");
+            int apTime = 10+index;
+            db.execSQL("INSERT INTO APPOINTMENT (patient_phn, date_time, reason) VALUES (" + phn + ", '2024-12-05 "+ apTime +":00:00', 'Routine Checkup');");
+            index++;
 
             // Insert five patient histories per patient
             for (int j = 1; j <= 5; j++) {
                 db.execSQL("INSERT INTO PATIENT_HISTORY (patient_phn, date_time, weight, height, diagnoses, treatments) " +
-                        "VALUES (" + phn + ", '2024-01-" + j + " 10:00:00', " + (60 + j) + ", " + (160 + j) + ", 'Diagnosis " + j + "', 'Treatment " + j + "');");
+                        "VALUES (" + phn + ", '2024-11-" + j + " 10:00:00', " + (60 + j) + ", " + (160 + j) + ", 'Diagnosis " + j + "', 'Treatment " + j + "');");
 
                 // Insert two to three medications per history
                 for (int k = 1; k <= 3; k++) {

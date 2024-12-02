@@ -58,7 +58,7 @@ public class HomeScreen extends AppCompatActivity {
         Doctor doctor = (Doctor) getIntent().getSerializableExtra("doctor");
 
         welcomeText = (TextView) findViewById(R.id.tvWelcome);
-        welcomeText.setText("Welcome "+ doctor.getName());
+        welcomeText.setText("Welcome Dr. "+ doctor.getName());
         welcomeText.setTextSize(22);
         PatientDAO patientDAO = new PatientDAO(this);
         AppointmentDAO appointmentDAO = new AppointmentDAO(this);

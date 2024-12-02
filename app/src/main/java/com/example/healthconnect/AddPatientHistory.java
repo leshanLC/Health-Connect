@@ -159,7 +159,7 @@ public class AddPatientHistory extends AppCompatActivity {
             Intent resultIntent = new Intent();
             resultIntent.putExtra("newRecordAdded", true); // Optional: Include additional info if needed
             setResult(RESULT_OK, resultIntent);
-            finish();
+            //finish();
         }else{
             Toast.makeText(this, "Failed to add the history record", Toast.LENGTH_SHORT).show();
             edtPhn.setText("");
